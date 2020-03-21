@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
-require("express-validator/check")
+require("express-validator")
 
-const GpsPointsModel = require("../models/gpsPoint")
+const GpsPointsModel = require("../models/gpsPoints")
 
 
 router.get("/", async (req, res) => {
@@ -18,14 +18,7 @@ router.get("/", async (req, res) => {
 })
 
 
-router.post("/", [
-  //validate input
-  body('gpsPoints')
-    .not()
-    .isEmpty()
-    .string()
-    .escape()
-], async (req, res) => {
+router.post("/", async (req, res) => {
 
     try {
       // request data from client
