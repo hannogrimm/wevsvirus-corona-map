@@ -36,8 +36,11 @@ const Map = () => {
 
     // Add event listener:
     map.addEventListener('tap', function (evt) {
-      // Log 'tap' and 'mouse' events:
-      console.log(evt.type, evt.currentPointer.type);
+
+      var coord = map.screenToGeo(evt.currentPointer.viewportX,
+        evt.currentPointer.viewportY);
+
+      console.log("Clicked at: ", coord['lat'], coord['lng']);
     });
 
 
