@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
   try {
     
 
-    const gpsPoints = await GpsPointsModel.findAll()
+    const gpsPoints = await GpsPointsModel.find()
     res.json(gpsPoints)
   } catch (err) {
     console.error(err.message)
