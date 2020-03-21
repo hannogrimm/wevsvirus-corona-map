@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const GPSPointsSchema = mongoose.Schema({
   isInfected: {
@@ -22,4 +22,4 @@ const GPSPointsSchema = mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model("gpsPoints", GPSPointsSchema)
+module.exports = mongoose.model("gpsPoints", GPSPointsSchema);
