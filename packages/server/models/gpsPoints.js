@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const GPSPointsSchema = mongoose.Schema({
   isInfected: {
     type: Boolean,
-    required: false
+    required: true
   },
   location: {
     type: {
