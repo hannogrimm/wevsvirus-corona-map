@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [lng, setLng] = useState(13);
+  const [lat, setLat] = useState(52);
+  const [zoom, setZoom] = useState(8);
+
+  useEffect(() => {
+    var platform = new window.H.service.Platform({
+      apikey: process.env.REACT_APP_HERE_API_KEY
+    });
+
+    var defaultLayers = platform.createDefaultLayers();
+
+    var map = new window.H.Map(
+      document.getElementById("here-map"),
+      defaultLayers.vector.normal.map,
+      {
+        center: { lat: lat, lng: lng },
+        zoom: zoom
+      }
+    );
+  }, []);
+  return <div id="here-map" style={{ width: "100%", height: "500px" }} />;
 }
 
 export default App;
