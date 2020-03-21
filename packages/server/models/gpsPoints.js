@@ -1,26 +1,20 @@
 const mongoose = require("mongoose")
 
 const ContactSchema = mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "users"
+  isInfected: {
+    type: Boolean,
+    required: false
   },
   location: {
-    // GeoJSON Point
     type: {
-      type: String,
-      enum: ["Point"],
-      required: false
+      type: String, // Don't do `{ location: { type: String } }`
+      enum: ['Point'], // 'location.type' must be 'Point'
+      required: true
     },
     coordinates: {
       type: [Number],
-      required: false,
-      index: "2dsphere"
+      required: true
     },
-  type: {
-    type: String,
-    default: "personal"
-  },
   date: {
     type: Date,
     default: Date.now
