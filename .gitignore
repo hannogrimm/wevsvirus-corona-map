@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-.luccasjokes
-node_modules
-=======
 node_modules/
 dist/
 **/coverage
@@ -20,4 +16,4 @@ failed-*.md
 .webpack
 .imports
 LRs.csv
->>>>>>> c700f5ed908ae91838ba2f8904c7776a5afc4d01
+node_modules
