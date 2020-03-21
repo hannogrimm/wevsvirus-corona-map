@@ -1,1 +1,4 @@
 .luccasjokes
+node_modules
+.env
+
