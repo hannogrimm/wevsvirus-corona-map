@@ -1,17 +1,15 @@
 const express = require("express")
 const router = express.Router()
-const { check, validationResult } = require("express-validator/check")
+require("express-validator/check")
 
-const GpsPoint = require("../models/gpsPoint")
+const GpsPointsModel = require("../models/gpsPoint")
 
-// @route     GET api/gpsPoints
-// @desc      Get all users gpsPoints
-// @access    Private
+
 router.get("/", async (req, res) => {
   try {
     
-    //look 
-    const gpsPoints = await GpsPoint.findAll()
+
+    const gpsPoints = await GpsPointsModel.findAll()
     res.json(gpsPoints)
   } catch (err) {
     console.error(err.message)
@@ -19,23 +17,30 @@ router.get("/", async (req, res) => {
   }
 })
 
-// @route     POST api/gpsPoints
-// @desc      Add new gpsPoint
-// @access    Private
-router.post("/", async (req, res) => {
+
+router.post("/", [
+  //validate input
+  body('gpsPoints')
+    .not()
+    .isEmpty()
+    .string()
+    .escape()
+], async (req, res) => {
 
     try {
-      //validate input 
-      const gpsPoints = body("gpsPoints").not().isEmpty().string().escape()
+      // request data from client
+      const { isInfected, location, coordinates, date } = req.body
 
-      const gpsPoints = new GpsPoint({
+      // create new gps point object
+      const gpsPoint = new GpsPoint({
         isInfected,
         location,
         coordinates,
         date
       })
 
-      await GpsPoint.save()
+      // save object to db
+      await gpsPoint.save()
 
       res.status(200).send("GPS Points saved.")
     } catch (err) {
