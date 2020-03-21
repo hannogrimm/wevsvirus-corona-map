@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const ContactSchema = mongoose.Schema({
+const GPSPointsSchema = mongoose.Schema({
   isInfected: {
     type: Boolean,
     required: false
@@ -21,4 +21,4 @@ const ContactSchema = mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model("contact", ContactSchema)
+module.exports = mongoose.model("gpsPoints", GPSPointsSchema)
