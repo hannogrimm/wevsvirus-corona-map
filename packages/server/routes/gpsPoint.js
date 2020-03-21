@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 const { check, validationResult } = require("express-validator/check")
 
-const gpsPoint = require("../models/gpsPoint")
+const GpsPoint = require("../models/gpsPoint")
 
 // @route     GET api/gpsPoints
 // @desc      Get all users gpsPoints
@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
   try {
     
     //look 
-    const gpsPoints = await gpsPoint.findAll()
+    const gpsPoints = await GpsPoint.findAll()
     res.json(gpsPoints)
   } catch (err) {
     console.error(err.message)
@@ -28,14 +28,14 @@ router.post("/", async (req, res) => {
       //validate input 
       const gpsPoints = body("gpsPoints").not().isEmpty().string().escape()
 
-      const gpsPoints = new gpsPoint({
+      const gpsPoints = new GpsPoint({
         isInfected,
         location,
         coordinates,
         date
       })
 
-      await gpsPoints.save()
+      await GpsPoint.save()
 
       res.status(200).send("GPS Points saved.")
     } catch (err) {
