@@ -25,19 +25,17 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
 
     try {
-      //unvalidated user input
-      const unvalidatedGpsPoints = req.body.gpsPoints
       //validate input 
-      const gpsPoints = validate(unvalidatedGpsPoints) 
+      const gpsPoints = body("gpsPoints").not().isEmpty().string().escape()
 
-      const newGpsPoints = new gpsPoint({
+      const gpsPoints = new gpsPoint({
         isInfected,
         location,
         coordinates,
         date
       })
 
-      await newGpsPoints.save()
+      await gpsPoints.save()
 
       res.status(200).send("GPS Points saved.")
     } catch (err) {
