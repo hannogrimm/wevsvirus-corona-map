@@ -56,7 +56,7 @@ const Map = () => {
       }
     );
 
-
+    window.addEventListener('resize', () => map.getViewPort().resize());
     var ui = window.H.ui.UI.createDefault(map, defaultLayers);
 
     var mapEvents = new window.H.mapevents.MapEvents(map);
