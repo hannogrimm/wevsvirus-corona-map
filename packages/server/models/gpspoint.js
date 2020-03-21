@@ -22,4 +22,4 @@ const GPSPointsSchema = mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model("gpsPoints", GPSPointsSchema);
+module.exports = mongoose.model("gpspoint", GPSPointsSchema);

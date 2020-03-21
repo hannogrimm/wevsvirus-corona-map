@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 require("express-validator")
 
-const GpsPointsModel = require("../models/gpsPoints")
+const GpsPointsModel = require("../models/gpspoint")
 
 
 router.get("/", async (req, res) => {
@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
       const { isInfected, location, coordinates, date } = req.body
 
       // create new gps point object
-      const gpsPoint = new GpsPoint({
+      const gpsPoint = new GpsPointsModel({
         isInfected,
         location,
         coordinates,
@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
       // save object to db
       await gpsPoint.save()
 
-      res.status(200).send("GPS Points saved.")
+      res.status(200).json("GPS Points saved.")
     } catch (err) {
       console.error(err.message)
       res.status(500).send("Server Error")
