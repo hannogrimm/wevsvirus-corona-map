@@ -1,10 +1,6 @@
 import React from 'react'
-<<<<<<< HEAD
 import ReactDOM from 'react-dom';
 import { useTranslation } from 'react-i18next'
-=======
-import ReactDOM from 'react-dom'
->>>>>>> b9425871f6897830e624771978e11d820d472204
 const API_KEY = process.env.REACT_APP_HERE_API_KEY ? process.env.REACT_APP_HERE_API_KEY : 'unknown'
 
 function autocompleteSearch(e) {
@@ -35,50 +31,41 @@ function autocompleteSearch(e) {
   xmlHttp.send(null)
 }
 
-function addLocation(e) {
-  e.preventDefault()
-  var form = document.getElementById('location-form')
-  var nLocation = form.children.length + 1
-  var locationInputId = `location-input-${nLocation}`
-  var autocompleteListId = `autocomplete-results-${nLocation}`
-  var dateInputId = `date-${nLocation}`
-  var fromInputId = `from-${nLocation}`
-  var toInputId = `to-${nLocation}`
-  //console.log(form.children);
-  class Location extends React.Component {
-    render() {
-      return (
-        <>
-          <label for={locationInputId}>Standort {nLocation}</label>
-          <br></br>
-          <input
-            type="text"
-            onChange={autocompleteSearch}
-            placeholder="Search Location"
-            id={locationInputId}
-            list={autocompleteListId}
-          ></input>
-          <br></br>
-          <datalist id={autocompleteListId}></datalist>
-          <label for={dateInputId}>Date</label>
-          <br></br>
-          <input type="date" name={dateInputId} id={dateInputId}></input>
-          <br></br>
-          <label for={fromInputId}>Von</label>
-          <input type="time" name={fromInputId} id={fromInputId}></input>
-          <label for={toInputId}>Bis</label>
-          <input type="time" name={toInputId} id={toInputId}></input>
-          <br></br>
-          <button onClick={addLocation}>+</button>
-        </>
-      )
-    }
-  }
+class Location extends React.Component {
 
-  var div = document.createElement('div')
-  div.id = `location-${nLocation}`
-  form.appendChild(div)
-  ReactDOM.render(<Location />, document.getElementById(`location-${nLocation}`))
+  render() {
+    var locationInputId = `location-input-${this.props.nLocation}`;
+    var autocompleteListId = `autocomplete-results-${this.props.nLocation}`;
+    var dateInputId = `date-${this.props.nLocation}`;
+    var fromInputId = `from-${this.props.nLocation}`;
+    var toInputId = `to-${this.props.nLocation}`;
+
+    return(
+      <>
+    <label for={locationInputId}>Standort {this.props.nLocation}</label><br></br>
+  <input type = "text" onChange = {autocompleteSearch} placeholder = "Search Location" id={locationInputId} list={autocompleteListId}></input><br></br>
+  <datalist id={autocompleteListId}>
+  </datalist>
+  <label for={dateInputId}>Date</label><br></br>
+  <input type="date" name={dateInputId} id={dateInputId}></input><br></br>
+  <label for={fromInputId}>Von</label>
+  <input type="time" name={fromInputId} id={fromInputId}></input>
+  <label for={toInputId}>Bis</label>
+  <input type="time" name={toInputId} id={toInputId}></input><br></br>
+  <button onClick={addLocation}>+</button>
+  </>
+)
+    }
+}
+function addLocation(e) {
+  e.preventDefault();
+  var form = document.getElementById("location-form");
+  var nLocation = form.children.lengt;
+  //console.log(form.children);
+ var div = document.createElement("div");
+ div.id = `location-${nLocation}`
+ form.appendChild(div);
+ ReactDOM.render(<Location nLocation={nLocation}/>, document.getElementById(`location-${nLocation}`))
 }
 
 function uploadInfections(e) {
@@ -102,7 +89,7 @@ const LocationForm = (props) => {
   } else {
     submitButton = <button onClick={checkInfected}>{t('checkInfected')}</button>
   }
-  
+
   return ( 
     <>
     <span> I will be a form </span> 
