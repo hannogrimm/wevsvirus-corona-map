@@ -127,6 +127,14 @@ button:active {
   flex-direction: row;
 }
 
+@media (max-width: 700px) {
+  .body {
+    background-color: blue;
+  }
+  .flex-row {
+    flex-direction: column;
+  }
+}
 .cta-button {
   border-radius: 30px;
   border: 2px solid #000;
