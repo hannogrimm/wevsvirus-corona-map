@@ -7,7 +7,10 @@ const GPSPointsSchema = mongoose.Schema({
   },
   location: {
       type: "Point",
-      coordinates: [Number]
+      coordinates: { 
+        longitude: Number, 
+        latitude: Number 
+      }
   },
   datetime: {
     type: Date
