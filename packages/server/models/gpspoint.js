@@ -12,7 +12,10 @@ const GPSPointsSchema = mongoose.Schema({
         latitude: Number 
       }
   },
-  datetime: {
+  timeArrival: {
+    type: Date
+  },
+  timeDepature: {
     type: Date
   }
 })

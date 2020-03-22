@@ -14,21 +14,28 @@ router.get('/', async (req, res) => {
     // define earth radius +
     const earthEqotorialRadius = 3963.2
     // search radius
-    const searchRadiusMiles = 2.5 
+    const searchRadiusMiles = 2.5
 
     // query db for:
-     const resultLocations = await GpsPointsModel.find( 
-        // time in between arrival and departure
-        { datetime: { $in: [ timeArrival, timeDepature ] } }, 
-        // only infected locations
-        { infectionStatus: "isInfected" }, 
+    const resultLocations = await GpsPointsModel.find(
+      // 1. location 
+      { location: 
         // in 2.5 mile range of req. location
-        { location: { $geoWithin: { $centerSphere: [ location, searchRadiusMiles/earthEqotorialRadius ] } }
-    })
+        { $geoWithin: { $centerSphere: [location, searchRadiusMiles / earthEqotorialRadius] } } 
+      },
+      // 2. time
+      { datetime:
+        // in between arrival and depature time
+        { $and: [{ timeArrival: { $gte: timeArrival } }, { timeDepature: { $lte: timeArrival } }] }
+      },
+      // 3. infection
+      { infectionStatus: 
+        'isInfected' 
+      }
+    )
 
     // send response array
     res.json(resultLocations)
-
   } catch (err) {
     console.error(err.message)
     res.status(500).send('Server Error')
@@ -36,22 +43,21 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-
   try {
     // request data from client
-    const { infectionStatus, location, datetime } = req.body
+    const { infectionStatus, location, timeArrival, timeDepature } = req.body
 
     // create new location object
     const location = new GpsPointsModel({
       infectionStatus,
       location,
-      datetime
+      timeArrival,
+      timeDepature,
     })
 
     // save object to db, return 200
     await location.save()
     res.status(200).json('Location saved.')
-
   } catch (err) {
     console.error(err.message)
     res.status(500).send('Server Error')
