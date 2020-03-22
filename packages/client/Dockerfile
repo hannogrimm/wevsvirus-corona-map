@@ -4,10 +4,9 @@ WORKDIR /client
 
 ENV PATH /app/node_modules/.bin:$PATH
 
-COPY ./package.json /client/
-RUN yarn
+RUN npm install -g serve --silent
 
-COPY ./src/ /client/src/
-COPY ./public/ /client/public/
+COPY ./build/ .
 
-CMD bash
+
+CMD serve -l 3000 -s .
