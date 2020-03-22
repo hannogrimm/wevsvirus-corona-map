@@ -8,8 +8,7 @@ router.get('/', async (req, res) => {
   console.log('getting gpsPoint')
 
   try {
-    const gpsPoints = await GpsPointsModel.find()
-
+    const gpsPoints = await GpsPointsModel.find({ isInfected: true })
     res.json(gpsPoints)
   } catch (err) {
     console.error(err.message)
@@ -22,13 +21,14 @@ router.post('/', async (req, res) => {
 
   try {
     // request data from client
-    const { isInfected, location, coordinates, date } = req.body
+    const { isInfected, city, postcode, coordinates, date } = req.body
 
     // create new gps point object
     const gpsPoint = new GpsPointsModel({
       isInfected,
-      location,
       coordinates,
+      city,
+      postcode,
       date,
     })
 

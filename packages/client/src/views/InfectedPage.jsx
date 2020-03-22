@@ -1,7 +1,7 @@
 import React from 'react'
 import AnonymousBanner from '../components/AnonymousBanner'
 import Navbar from '../components/Navbar'
-import Map from '../Map'
+import HeatMap from '../HeatMap'
 import LocationForm from '../components/LocationForm'
 import { useTranslation } from 'react-i18next'
 
@@ -25,7 +25,7 @@ const InfectedPage = () => {
         </div>
       </div>
 
-      <Map />
+      <HeatMap />
     </>
   )
 }
