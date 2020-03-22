@@ -15,7 +15,7 @@ router.get('/complex', async (req, res) => {
 
   try {
     // request data from client body
-    const { location, userArrived, userLeft } = req.body
+    const { coordinates, userArrived, userLeft } = req.body
 
     // earth radius 
     const earthEqotorialRadius = 3963.2
@@ -23,10 +23,8 @@ router.get('/complex', async (req, res) => {
     const searchRadiusMiles = 2.5
     
     // final search query
-    const finalSearchQuery = { location:  
-      { $geoWithin: 
-        { $centerSphere: [location, searchRadiusMiles / earthEqotorialRadius] } 
-      } 
+    const finalSearchQuery =    {
+      location: { $geoWithin: { $centerSphere: [ coordinates, 5/3963.2 ] } }
     }
 
     // { timeArrival: { $gte: userArrived } }
