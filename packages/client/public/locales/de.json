@@ -1,3 +1,5 @@
 {
-  "hello": "Hallooo"
+  "hello": "Hallooo",
+  "date": "Datum",
+  "time": "Uhrzeit"
 }
