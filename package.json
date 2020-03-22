@@ -7,7 +7,7 @@
   "scripts": {
     "dev:client": "cd packages/client && yarn start",
     "server": "cd packages/server && nodemon server.js",
-    "notWorking": "concurrently \"npm run server\" \"npm run dev:client\""
+    "dev": "concurrently \"npm run server\" \"cd packages/client && yarn start\""
   },
   "repository": "https://github.com/hannogrimm/wevsvirus-corona-map",
   "author": "Svvite <dimitrigrimm@yahoo.de>",
