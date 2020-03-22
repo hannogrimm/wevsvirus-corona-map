@@ -12,5 +12,8 @@
     "prompt": "Ermittel dein Risikopotential",
     "thanks": "Überprüfe deine letzten Aufenthaltsorte auf Covid-19 Fälle",
     "info": "Versuche Dich an Deine Bewegungshistore im öffentlichen Raum in den letzten 4 Tagen zu erinnern. Gebe die Adressen von Orten wie Einkaufszentren, Schulen, öffentliche Plätzen etc. an, an denen Du Dich aufgehalten hast."
-  }
+  },
+  "date": "Datum",
+  "time": "Uhrzeit"
+
 }

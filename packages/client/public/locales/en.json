@@ -12,5 +12,8 @@
     "prompt": "Ascertain your risk potential",
     "thanks": "Check your last whereabouts for Covid-19 cases",
     "info": "Try to remember your recent movement history through public spaces in the last 4 days. Enter locations of places as shopping malls, schools, parks etc. that you visited recently."
-  }
+  },
+  "date": "date",
+  "time": "time"
+
 }
