@@ -4,7 +4,6 @@ require('express-validator')
 
 const GpsPointsModel = require('../models/gpspoint')
 
-
 router.post('/getnearby', async (req, res) => {
   console.log('getting gpsPoint')
 
@@ -43,8 +42,8 @@ router.post('/new', async (req, res) => {
 
     // create new location object
     const newLocation = new GpsPointsModel({
-      infectionStatus,
       location,
+      infectionStatus,
       timeArrival,
       timeDepature,
     })
