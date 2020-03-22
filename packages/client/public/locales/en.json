@@ -1,3 +1,11 @@
 {
-  "hello": "helloooo"
+  "anonymous": {
+    "text": "All your information will be anonymous.",
+    "link": "Get more information."
+  },
+  "infected": {
+    "prompt": "Help as an infected person",
+    "thanks": "Thank you for your support to stop the spread.",
+    "info": "Try to remember your recent movement history through public spaces since you showed first symptoms. Enter locations of places as shopping malls, schools, parks etc. that you attended since or close to your first awareness of your symptoms."
+  }
 }
