@@ -224,4 +224,5 @@ button:active {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 75px 0 50px;
 }
