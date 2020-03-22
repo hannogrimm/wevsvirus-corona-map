@@ -1,19 +1,29 @@
 import React, { useEffect, useState } from 'react'
-
+import { useTranslation } from 'react-i18next'
+import i18n from "i18next";
 const API_KEY = process.env.REACT_APP_HERE_API_KEY ? process.env.REACT_APP_HERE_API_KEY : 'unknown'
 
 var gpsPoints = []
 
-function reverseGeocode(platform, coord) {
+function reverseGeocode(platform, coord, ui, t) {
   var geocoder = platform.getGeocodingService(),
     reverseGeocodingParameters = {
       prox: `${coord.lat},${coord.lng}`, // Coords from click event
       mode: 'retrieveAddresses',
       maxresults: '1',
-      jsonattributes: 1,
-    }
+      jsonattributes: 1
+    };
 
-  geocoder.reverseGeocode(reverseGeocodingParameters, onSuccess, onError)
+  geocoder.reverseGeocode(
+    reverseGeocodingParameters,
+    (result) => {
+      var locations = result.response.view[0].result;
+      console.log(locations[0]);
+      addLocationBubble(locations[0].location, ui, t);
+  },
+
+    onError
+  );
 }
 
 function onSuccess(result) {
@@ -23,11 +33,30 @@ function onSuccess(result) {
   console.log(gpsPoints)
 }
 
+function addLocationBubble(location, ui, t){
+  var bubble = new window.H.ui.InfoBubble({ lng: location.displayPosition.longitude, lat: location.displayPosition.latitude }, {
+    content: `<div class="add-location-overlay">
+    <p>${location.address.label}</p>
+    <label for="time">${t("time")}</label>
+    <input name="time" type="time"></input>
+    <label for="time">date</label>
+    <input name="date" type="date"></input>
+    <button type="submit">Add to timeline</button>
+    </div>`
+    // 
+    // <label for="time">${t("date")}</label>
+ });
+  
+  ui.addBubble(bubble)
+}
+
 function onError(error) {
   alert("Can't reach the remote server")
 }
 
 const ClickableMap = () => {
+  //const t = this.props.t
+  const { t } = useTranslation()
   const [lng, setLng] = useState(13)
   const [lat, setLat] = useState(52.5)
   const [zoom, setZoom] = useState(9)
@@ -48,7 +77,15 @@ const ClickableMap = () => {
     })
 
     window.addEventListener('resize', () => map.getViewPort().resize())
-    var ui = window.H.ui.UI.createDefault(map, defaultLayers)
+
+    var mapUILng = i18n.language;
+    if (mapUILng.search("de") >= 0){
+      mapUILng = "de-DE";
+    } else if ((mapUILng.search("en") >= 0)){
+      mapUILng = "en-US";
+    }
+
+    var ui = window.H.ui.UI.createDefault(map, defaultLayers, mapUILng)
 
     var mapEvents = new window.H.mapevents.MapEvents(map)
 
@@ -65,8 +102,8 @@ const ClickableMap = () => {
 
       console.log('Clicked at: ', coord['lat'], coord['lng'])
       gpsPoints.push({ lat: coord['lat'], lng: coord['lng'] })
-      heatmapProvider.addData([coord])
-      reverseGeocode(platform, coord)
+      //heatmapProvider.addData([coord])
+      reverseGeocode(platform, coord, ui, t)
     })
 
     // Instantiate the default behavior, providing the mapEvents object:
