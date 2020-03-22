@@ -8,7 +8,7 @@ const AnonymousBanner = () => {
     <div className="anonymous-banner">
       <span>
         {t('anonymous.text')}{' '}
-        <a target="_blank" href="/#abouttheproject">
+        <a style={{ textDecoration: 'underline' }} target="_blank" href="/#abouttheproject">
           {t('anonymous.link')}
         </a>
       </span>
