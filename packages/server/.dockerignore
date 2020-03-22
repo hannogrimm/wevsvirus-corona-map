@@ -1,0 +1,5 @@
+.env
+Dockerfile
+*.md
+node_modules
+package-lock.json
