@@ -27,7 +27,7 @@ function onError(error) {
   alert("Can't reach the remote server")
 }
 
-const Map = () => {
+const ClickableMap = () => {
   const [lng, setLng] = useState(13)
   const [lat, setLat] = useState(52.5)
   const [zoom, setZoom] = useState(9)
@@ -73,14 +73,17 @@ const Map = () => {
     var behavior = new window.H.mapevents.Behavior(mapEvents)
   }, [lat, lng, zoom])
   return (
-    <div
-      id="here-map"
-      style={{
-        width: '100%',
-        height: '500px',
-      }}
-    />
+    <div style={{ justifyContent: 'center' }}>
+      <div
+        id="here-map"
+        style={{
+          margin: 'auto',
+          width: '80%',
+          height: '70vh',
+        }}
+      />
+    </div>
   )
 }
 
-export default Map
+export default ClickableMap
