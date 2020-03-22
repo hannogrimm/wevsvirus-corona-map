@@ -2,6 +2,7 @@ const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const path = require('path')
+const cors = require('cors')
 
 const connectDB = require('./config/db')
 
@@ -12,6 +13,7 @@ dotenv.config({ path: './config/config.env' })
 connectDB()
 
 const app = express()
+app.use(cors())
 
 // Init Middleware
 app.use(express.json({ extended: false }))

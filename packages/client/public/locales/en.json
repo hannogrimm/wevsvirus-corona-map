@@ -4,12 +4,12 @@
     "link": "Get more information."
   },
   "infobanner": {
-    "text": "Participating is of free choice and kept anonymous. Collected data is saved only temporarly.",
+    "text": "Participating is voluntary and kept anonymous. Collected data is saved only temporarly.",
     "link": "More Information"
   },
   "home": {
-    "headline": "Covid-19 (Coronavirus)",
-    "prompt": "Geomap (live)",
+    "headline": "Your Move Against Corona.",
+    "prompt": "Corolation",
     "info": "Follow live Covid-19 risk areas and check anonymously if you recently visited a risk area.",
     "info2": "We pledge all citiziens that positively tested for Covid-19 to anonymously enter their recent movement history in public areas to help stopping the spread of the virus.",
     "cta": {
@@ -43,23 +43,23 @@
     "headline": "Project Information",
     "texts": {
       "anonymous": {
-        "around1": "Sämtliche Daten über deine Aufenthaltshistorie werden",
-        "bold": "anonym und nur temporär",
-        "around2": "zur Visualisierung der Risikozonen gespeichert."
+        "around1": "All your data about your location history will be stored",
+        "bold": "anonymized and only temporarily",
+        "around2": "for the visualization of risk areas."
       },
       "nopersonaldata": {
-        "around1": "Den Daten sind",
-        "bold": "keine personenbezogene Informationen",
-        "around2": "hinterlegt und können und werden damit nicht gegen Dich verwendet."
+        "around1": "Your data features",
+        "bold": "no personal information",
+        "around2": "and therefore can't or won't be used."
       },
       "free": {
-        "around1": "Die Teilnahme ist",
-        "bold": "freiwillig und unverbindlich",
+        "around1": "The participation",
+        "bold": "is voluntary and non-binding",
         "around2": "."
       },
       "tobedeleted": {
-        "around1": "Nach offizieller Ausrufung des Endes der Corona Pandemie werden sämtliche Daten",
-        "bold": "unwiderruflich gelöscht",
+        "around1": "After the official announcement of an end of the pandemic, all data will be ",
+        "bold": "deleted irreversibaly and completely",
         "around2": "."
       }
     }
@@ -72,7 +72,7 @@
   "risked": {
     "prompt": "Ascertain your risk potential",
     "thanks": "Check your last whereabouts for Covid-19 cases",
-    "info": "Try to remember your recent movement history through public spaces in the last 4 days. Enter locations of places as shopping malls, schools, parks etc. that you visited recently."
+    "info": "Try to remember your recent movement history through public spaces in the last 8 days. Enter locations of places as shopping malls, schools, parks etc. that you visited recently."
   },
 
   "footer": {
@@ -97,8 +97,35 @@
     "imprint": "Imprint",
     "datapolicy": "Data Policy"
   },
-  "date": "Date",
-  "time": "Time",
-  "addToTimeline": "Add to Timeline"
-
+  "date": "date",
+  "time": "time",
+  "addToTimeline": "Add to Timeline",
+  "form": {
+    "title": "Share Your Recent Locations",
+    "desc": "Select your recent location visits or import them via Google Timeline (coming soon)",
+    "fields": {
+      "location": {
+        "label": "Location",
+        "placeholder": "City, Adress, Building, Region etc."
+      },
+      "date": {
+        "label": "Date",
+        "placeholder": "Date of Visit",
+        "format": "DD.MM.YYYY"
+      },
+      "time": {
+        "from": {
+          "label": "From",
+          "placeholder": "Time",
+          "format": "HH:mm"
+        },
+        "to": {
+          "label": "To",
+          "placeholder": "Time",
+          "format": "HH:mm"
+        }
+      }
+    },
+    "button": "Share This Location"
+  }
 }

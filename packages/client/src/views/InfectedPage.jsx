@@ -15,7 +15,7 @@ const InfectedPage = () => {
       <div className="container" style={{ paddingBottom: '50px' }}>
         <h5 style={{ textAlign: 'right' }}>{t('infected.thanks')}</h5>
         <div className="hero-header">
-          <div className="form" style={{}}>
+          <div className="form">
             <LocationForm />
           </div>
           <div style={{ marginLeft: '50%', flex: '100%', textAlign: 'right' }}>

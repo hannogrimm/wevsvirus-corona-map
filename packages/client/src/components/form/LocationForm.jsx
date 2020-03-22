@@ -3,10 +3,12 @@ import { autocompleteSearch } from './_helpers'
 import { Formik } from 'formik'
 import { Form, Input, TimePicker, DatePicker } from 'formik-antd'
 import FormItem from 'antd/lib/form/FormItem'
+import { useTranslation } from 'react-i18next'
 
 const API_KEY = process.env.REACT_APP_HERE_API_KEY ? process.env.REACT_APP_HERE_API_KEY : 'unknown'
 
 const LocationForm = () => {
+  const { t } = useTranslation()
   const [autocompleteState, setAutocompleteState] = useState([])
   const inputRef = createRef()
 
@@ -30,9 +32,9 @@ const LocationForm = () => {
 
   return (
     <div className="location-form">
-      <h4 style={{ marginTop: 0, marginBottom: 10 }}>Sende Deine letzten Standorte</h4>
+      <h4 style={{ marginTop: 0, marginBottom: 10 }}>{t('form.title')}</h4>
       <p>
-        <span>Wähle Deine letzten Standorte aus oder importiere Deine Bewegungshistorie von Google</span>
+        <span>{t('form.desc')}</span>
       </p>
       <Formik
         initialValues={{
@@ -45,7 +47,7 @@ const LocationForm = () => {
         }}
         render={() => (
           <Form layout="vertical">
-            <Form.Item name="location" label="Standort">
+            <Form.Item name="location" label={t('form.fields.location.label')}>
               <Input
                 name="location"
                 ref={inputRef}
@@ -61,7 +63,7 @@ const LocationForm = () => {
                 }}
                 id="autocomplete-input"
                 list="autocomplete-results"
-                placeholder="Stadt, Adresse, Gebäude, Örtlichkeit etc."
+                placeholder={t('form.fields.location.placeholder')}
               />
 
               <datalist id="autocomplete-results">
@@ -71,23 +73,44 @@ const LocationForm = () => {
               </datalist>
             </Form.Item>
 
-            <Form.Item name="date" label="Datum">
-              <DatePicker name="date" style={{ width: '100%' }} placeholder="Tag des Besuchs" format="DD.MM.YYYY" />
+            <Form.Item name="date" label={t('form.fields.date.label')}>
+              <DatePicker
+                name="date"
+                style={{ width: '100%' }}
+                placeholder={t('form.fields.date.placeholder')}
+                format={t('form.fields.date.format')}
+              />
             </Form.Item>
 
             <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-              <Form.Item name="time.start" style={{ flex: '50%', marginRight: 10 }} label="Von">
-                <TimePicker name="time.start" style={{ width: '100%' }} showTime={{ format: 'HH:mm' }} placeholder="Uhrzeit" format="HH:mm" />
+              <Form.Item
+                name="time.start"
+                style={{ flex: '50%', marginRight: 10 }}
+                label={t('form.fields.time.from.label')}
+              >
+                <TimePicker
+                  name="time.start"
+                  style={{ width: '100%' }}
+                  showTime={{ format: 'HH:mm' }}
+                  placeholder={t('form.fields.time.from.placeholder')}
+                  format={t('form.fields.time.from.format')}
+                />
               </Form.Item>
 
-              <Form.Item name="time.end" style={{ flex: '50%' }} label="Bis">
-                <TimePicker name="time.end" style={{ width: '100%' }} showTime={{ format: 'HH:mm' }} placeholder="Uhrzeit"  format="HH:mm" />
+              <Form.Item name="time.end" style={{ flex: '50%' }} label={t('form.fields.time.to.label')}>
+                <TimePicker
+                  name="time.end"
+                  style={{ width: '100%' }}
+                  showTime={{ format: 'HH:mm' }}
+                  placeholder={t('form.fields.time.to.placeholder')}
+                  format={t('form.fields.time.to.format')}
+                />
               </Form.Item>
             </div>
 
             <FormItem>
               <button className="cta-button primary" style={{ borderRadius: 2, marginTop: 30, width: '100%' }}>
-                Übermittle diesen Standort
+                {t('form.button')}
               </button>
             </FormItem>
           </Form>
