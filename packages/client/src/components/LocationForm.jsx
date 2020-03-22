@@ -1,11 +1,9 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
+import Location from './Location'
 const API_KEY = process.env.REACT_APP_HERE_API_KEY ? process.env.REACT_APP_HERE_API_KEY : 'unknown'
 
-function searchLocation(e) {
-  e.preventDefault();
-  var form = document.getElementById("location-form");
-  console.log(form)
-}
+
 
 function autocompleteSearch(e) {
   //console.log(e.target.value)
@@ -13,13 +11,15 @@ function autocompleteSearch(e) {
   xmlHttp.onreadystatechange = function () {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
       //console.log(xmlHttp.responseText);
-      var resultsList = document.getElementById("autocomplete-results");
-      if(typeof(resultsList) !== "undefined"){
+      var nLocation = document.getElementById("location-form").children.length;
+      var resultsList = document.getElementById(`autocomplete-results-${nLocation}`);
+
+      if(typeof(resultsList) !== "undefined" && resultsList !== null){
         resultsList.innerHTML = "";
         var response = JSON.parse(xmlHttp.response);
         if(typeof(response.suggestions) !== "undefined"){
           for(var result of response.suggestions){
-            console.log(result)
+
             var resultOption = document.createElement('option');
             resultOption.innerHTML = result.label;
             resultsList.appendChild(resultOption);
@@ -40,6 +40,44 @@ function autocompleteSearch(e) {
 
 }
 
+function addLocation(e) {
+  e.preventDefault();
+  var form = document.getElementById("location-form");
+  var nLocation = form.children.length + 1;
+  var locationInputId = `location-input-${nLocation}`;
+  var autocompleteListId = `autocomplete-results-${nLocation}`;
+  var dateInputId = `date-${nLocation}`;
+  var fromInputId = `from-${nLocation}`;
+  var toInputId = `to-${nLocation}`;
+  //console.log(form.children);
+  class Location extends React.Component {
+    render() {
+      return(
+        <>
+      <label for={locationInputId}>Standort {nLocation}</label><br></br>
+    <input type = "text" onChange = {autocompleteSearch} placeholder = "Search Location" id={locationInputId} list={autocompleteListId}></input><br></br>
+    <datalist id={autocompleteListId}>
+    </datalist>
+    <label for={dateInputId}>Date</label><br></br>
+    <input type="date" name={dateInputId} id={dateInputId}></input><br></br>
+    <label for={fromInputId}>Von</label>
+    <input type="time" name={fromInputId} id={fromInputId}></input>
+    <label for={toInputId}>Bis</label>
+    <input type="time" name={toInputId} id={toInputId}></input><br></br>
+    <button onClick={addLocation}>+</button>
+    </>
+ )
+      }
+  }
+
+ var div = document.createElement("div");
+ div.id = `location-${nLocation}`
+ form.appendChild(div);
+ ReactDOM.render(<Location />, document.getElementById(`location-${nLocation}`))
+
+}
+
+
 function generateForm() {
   var form = document.createElement("form");
   form.id = "location-form"
@@ -50,22 +88,31 @@ function generateForm() {
 }
 
 const LocationForm = () => {
+
+  var nLocation = 1;
+  var locationInputId = `location-input-${nLocation}`;
+  var autocompleteListId = `autocomplete-results-${nLocation}`;
+  var dateInputId = `date-${nLocation}`;
+  var fromInputId = `from-${nLocation}`;
+  var toInputId = `to-${nLocation}`;
+  var divId = `location-${nLocation}`;
   return ( 
     <>
     <span> I will be a form </span> 
     <form id = "location-form" >
-      <label for="location-1">Standort 1</label><br></br>
-    <input type = "text" onChange = {autocompleteSearch} placeholder = "Search Location" list="autocomplete-results"></input><br></br>
-    <datalist id="autocomplete-results">
-    <option>Deutschland, Frankfurt am Main, <b>Berl</b>iner Straße</option>
+    <div id={divId}>
+    <label for={locationInputId}>Standort {nLocation}</label><br></br>
+    <input type = "text" onChange = {autocompleteSearch} placeholder = "Search Location" id={locationInputId} list={autocompleteListId}></input><br></br>
+    <datalist id={autocompleteListId}>
     </datalist>
-    <label for="date-1">Date</label><br></br>
-    <input type="date" name="date-1"></input><br></br>
-    <label for="from-1">Von</label>
-    <input type="time" name="from-1"></input>
-    <label for="to-1">Bis</label>
-    <input type="time" name="to-1"></input><br></br>
-    <button onClick = {searchLocation}>Submit</button>
+    <label for={dateInputId}>Date</label><br></br>
+    <input type="date" name={dateInputId} id={dateInputId}></input><br></br>
+    <label for={fromInputId}>Von</label>
+    <input type="time" name={fromInputId} id={fromInputId}></input>
+    <label for={toInputId}>Bis</label>
+    <input type="time" name={toInputId} id={toInputId}></input><br></br>
+    <button onClick={addLocation}>+</button>
+    </div>
     </form>
     </>
   )
