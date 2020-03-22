@@ -97,8 +97,8 @@
     "imprint": "Imprint",
     "datapolicy": "Data Policy"
   },
-  "date": "date",
-  "time": "time",
+  "date": "Date",
+  "time": "Time",
   "addToTimeline": "Add to Timeline"
 
 }
