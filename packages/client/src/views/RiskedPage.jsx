@@ -26,7 +26,7 @@ const RiskedPage = () => {
         </div>
       </div>
 
-      <HeatMap />
+      <ClickableMap />
     </>
   )
 }
