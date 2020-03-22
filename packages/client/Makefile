@@ -1,7 +1,9 @@
 secrets := $(shell cat .env | sed 's/\n/ /g')
 
 docker-build:
-	docker build -t wirvsvirus_client .
+	cd ../.. && yarn
+	yarn build
+	docker build -t eliaswolf/corolation-client .
 
 docker-run:
-	docker run -it -p 3000:3000 -e $(secrets) wirvsvirus_client
+	docker run --rm -it -p 3000:3000 -e $(secrets) eliaswolf/corolation-client
