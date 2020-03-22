@@ -50,9 +50,9 @@ function addLocationBubble(location, ui, t){
     <label for="time">${t("date")}</label>
     <input name="date" id="date-${location.displayPosition.longitude}-${location.displayPosition.latitude}" type="date" value="${date.getFullYear()}-${month}-${day}"></input><br>
     <label for="arrival">${t("arrivalTime")}</label>
-    <input name="arrival" id="arrival-${location.displayPosition.longitude}-${location.displayPosition.latitude}" type="time" value="${date.getHours()}:${date.getMinutes()}"></input>
+    <input name="arrival" id="arrival-${location.displayPosition.longitude}-${location.displayPosition.latitude}" type="time" value="${date.getHours()}:${date.getMinutes()}"></input><br>
     <label for="departure">${t("departureTime")}</label>
-    <input name="departure" id="departure-${location.displayPosition.longitude}-${location.displayPosition.latitude}" type="time" value="${date.getHours()}:${date.getMinutes()}"></input>
+    <input name="departure" id="departure-${location.displayPosition.longitude}-${location.displayPosition.latitude}" type="time" value="${date.getHours()}:${date.getMinutes()}"></input><br>
 
     <button id="btn-${location.displayPosition.longitude}-${location.displayPosition.latitude}">${t("addToTimeline")}</button>
     </form>
@@ -67,7 +67,7 @@ function addLocationBubble(location, ui, t){
 }
 function addToTimeline(e, position) {
   e.preventDefault();
-  console.log(e);
+
   var date = document.getElementById(`date-${position.longitude}-${position.latitude}`).value;
   var departure = document.getElementById(`departure-${position.longitude}-${position.latitude}`).value;
   var arrival = document.getElementById(`arrival-${position.longitude}-${position.latitude}`).value;
