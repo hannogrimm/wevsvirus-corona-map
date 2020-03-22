@@ -34,14 +34,24 @@ function onSuccess(result) {
 }
 
 function addLocationBubble(location, ui, t){
+  var date = new Date();
+  var day = date.getDate()
+  var month = date.getMonth()+1;
+  if(day < 10){
+    day = `0${day}`
+  }
+  if(month < 10){
+    month = `0${month}`
+  }
   var bubble = new window.H.ui.InfoBubble({ lng: location.displayPosition.longitude, lat: location.displayPosition.latitude }, {
     content: `<div class="add-location-overlay">
     <p>${location.address.label}</p>
-    <label for="time">${t("time")}</label>
-    <input name="time" type="time"></input>
     <label for="time">${t("date")}</label>
-    <input name="date" type="date"></input>
-    <button type="submit">${t("addToTimeline")}</button>
+    <input name="date" type="date" value="${date.getFullYear()}-${month}-${day}"></input><br>
+    <label for="time">${t("time")}</label>
+    <input name="time" type="time" value="${date.getHours()}:${date.getMinutes()}"></input>
+
+    <button onClick=${addToTimeline}>${t("addToTimeline")}</button>
     </div>`
     // 
     // 
@@ -49,7 +59,10 @@ function addLocationBubble(location, ui, t){
   
   ui.addBubble(bubble)
 }
-
+function addToTimeline(e) {
+  e.preventDefault();
+  console.log(e);
+}
 function onError(error) {
   alert("Can't reach the remote server")
 }
