@@ -1,6 +1,5 @@
 [
   {
-<<<<<<< HEAD
     "_id": {
       "$oid": "5e77a45ffc13ae6dae000050"
     },
@@ -398,26 +397,3 @@
 
 
 
-=======
-    "infectionStatus": "isInfected",
-    "location": {
-      
-    },
-    "timeArrival": "2020-03-20T07:31:00.548Z",
-    "timeDepature": "2020-03-20T17:31:00.548Z"
-  },  
-
-
-  {
-    "infectionStatus": "isInfected",
-    "location": {
-      "coordinates": {
-        "longitude": 45,
-        "latidude": 2
-      }
-    },
-    "timeArrival": "2020-03-22T11:31:44.548Z",
-    "timeDepature": "2020-03-22T11:31:44.548Z"
-  }
-]
->>>>>>> 76eccb1be07ea939d359f2b8e62c0af3fe6cb706
