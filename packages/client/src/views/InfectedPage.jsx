@@ -18,7 +18,7 @@ const InfectedPage = () => {
           <div className="form">
             <LocationForm />
           </div>
-          <div style={{ marginLeft: '50%', flex: '100%', textAlign: 'right' }}>
+          <div style={{ marginLeft: '55%', flex: '100%', textAlign: 'right' }}>
             <h1>{t('infected.prompt')}</h1>
             <p>{t('infected.info')}</p>
           </div>
