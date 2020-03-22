@@ -121,7 +121,7 @@
       "$oid": "5e77a45ffc13ae6dae00005d"
     },
     "infectionStatus": "isInfected",
-    "coordinates": [52.51042456488764 13.420067166718201],
+    "coordinates": [52.51042456488764, 13.420067166718201],
     "timeArrival": { "$date": "2019-10-04T11:43:08.000Z" },
     "timeDepature": { "$date": "2019-10-04 12:43:08 UTC" }
   },
