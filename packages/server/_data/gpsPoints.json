@@ -2,13 +2,10 @@
   {
     "infectionStatus": "isInfected",
     "location": {
-      "coordinates": {
-        "longitude": 35,
-        "latidude": -21
-      }
+      
     },
     "timeArrival": "2020-03-20T07:31:00.548Z",
-    "timeDepature": "2020-03-20T18:31:00.548Z"
+    "timeDepature": "2020-03-20T17:31:00.548Z"
   },  
 
 
