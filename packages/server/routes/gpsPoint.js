@@ -8,17 +8,21 @@ router.get('/', async (req, res) => {
   console.log('getting gpsPoint')
 
   try {
-    // request data from client
+    // request data from client body
     const { location, timeArrival, timeDepature } = req.body
 
-    // define earth radius & search radius 
+    // define earth radius +
     const earthEqotorialRadius = 3963.2
+    // search radius
     const searchRadiusMiles = 2.5 
 
-    // query db for time range, infected & in radius of location
+    // query db for:
      const resultLocations = await GpsPointsModel.find( 
+        // time in between arrival and departure
         { datetime: { $in: [ timeArrival, timeDepature ] } }, 
-        { isInfected: true}, 
+        // only infected locations
+        { infectionStatus: "isInfected" }, 
+        // in 2.5 mile range of req. location
         { location: { $geoWithin: { $centerSphere: [ location, searchRadiusMiles/earthEqotorialRadius ] } }
     })
 
@@ -35,12 +39,12 @@ router.post('/', async (req, res) => {
 
   try {
     // request data from client
-    const { infectionStatus, coordinates, datetime } = req.body
+    const { infectionStatus, location, datetime } = req.body
 
     // create new location object
     const location = new GpsPointsModel({
       infectionStatus,
-      coordinates,
+      location,
       datetime
     })
 

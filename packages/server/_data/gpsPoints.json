@@ -1,19 +1,22 @@
 [
   {
-    "_id": "5d713995b721c3bb38c1f5d0",
-    "infectionStatus": "",
-    "coordinates": [ , ],
-    "startDate": ,
-    "endDate": 
-
-  },
+    "infectionStatus": "isInfected",
+    "location": {
+      "coordinates": {
+        "longitude": 12344,
+        "latidude": 34567
+      }
+    },
+    "datetime": "2020-03-22T11:31:44.548Z"
+  },  
   {
-    "_id": "5d713a66ec8f2b88b8f830b8"
-  },
-  {
-    "_id": "5d725a037b292f5f8ceff787"
-  },
-  {
-    "_id": "5d725a1b7b292f5f8ceff788"
+    "infectionStatus": "isInfected",
+    "location": {
+      "coordinates": {
+        "longitude": 12344,
+        "latidude": 34567
+      }
+    },
+    "datetime": "2020-03-22T11:31:44.548Z"
   }
 ]
