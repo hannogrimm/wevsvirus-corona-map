@@ -1,11 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const cors = require('cors')
 require('express-validator')
 
 const GpsPointsModel = require('../models/gpspoint')
-
-router.use(cors())
 
 router.post('/getnearby', async (req, res) => {
   console.log('getting gpsPoint')
@@ -38,15 +35,15 @@ router.post('/getnearby', async (req, res) => {
   }
 })
 
-router.post('/new', cors(corsOptionsDelegate), async (req, res) => {
+router.post('/new', async (req, res) => {
   try {
     // request data from client
     const { infectionStatus, location, timeArrival, timeDepature } = req.body
 
     // create new location object
     const newLocation = new GpsPointsModel({
-      infectionStatus,
       location,
+      infectionStatus,
       timeArrival,
       timeDepature,
     })
