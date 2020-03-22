@@ -34,22 +34,62 @@ function onSuccess(result) {
 }
 
 function addLocationBubble(location, ui, t){
+  var date = new Date();
+  var day = date.getDate()
+  var month = date.getMonth()+1;
+  if(day < 10){
+    day = `0${day}`
+  }
+  if(month < 10){
+    month = `0${month}`
+  }
   var bubble = new window.H.ui.InfoBubble({ lng: location.displayPosition.longitude, lat: location.displayPosition.latitude }, {
     content: `<div class="add-location-overlay">
     <p>${location.address.label}</p>
-    <label for="time">${t("time")}</label>
-    <input name="time" type="time"></input>
+    <form>
     <label for="time">${t("date")}</label>
-    <input name="date" type="date"></input>
-    <button type="submit">${t("addToTimeline")}</button>
+    <input name="date" id="date-${location.displayPosition.longitude}-${location.displayPosition.latitude}" type="date" value="${date.getFullYear()}-${month}-${day}"></input><br>
+    <label for="arrival">${t("arrivalTime")}</label>
+    <input name="arrival" id="arrival-${location.displayPosition.longitude}-${location.displayPosition.latitude}" type="time" value="${date.getHours()}:${date.getMinutes()}"></input>
+    <label for="departure">${t("departureTime")}</label>
+    <input name="departure" id="departure-${location.displayPosition.longitude}-${location.displayPosition.latitude}" type="time" value="${date.getHours()}:${date.getMinutes()}"></input>
+
+    <button id="btn-${location.displayPosition.longitude}-${location.displayPosition.latitude}">${t("addToTimeline")}</button>
+    </form>
     </div>`
     // 
     // 
  });
   
-  ui.addBubble(bubble)
+  ui.addBubble(bubble);
+  var button = document.getElementById(`btn-${location.displayPosition.longitude}-${location.displayPosition.latitude}`)
+  button.addEventListener("click", (e) => addToTimeline(e, location.displayPosition));
 }
-
+function addToTimeline(e, position) {
+  e.preventDefault();
+  console.log(e);
+  var date = document.getElementById(`date-${position.longitude}-${position.latitude}`).value;
+  var departure = document.getElementById(`departure-${position.longitude}-${position.latitude}`).value;
+  var arrival = document.getElementById(`arrival-${position.longitude}-${position.latitude}`).value;
+  var timeArrival = new Date(`${date} ${arrival}`);
+  var timeDeparture = new Date(`${date} ${departure}`);
+  var arrivalString = `${timeArrival.getFullYear()}-${timeArrival.getMonth()+1 < 10 ? '0'+Number(timeArrival.getMonth()+1):timeArrival.getMonth()+1}-${timeArrival.getDate()+1 < 10 ? '0'+Number(timeArrival.getDate()+1):timeArrival.getDate()+1}T${timeArrival.getHours()}:${timeArrival.getMinutes()}:00.000Z`;
+  var departureString = `${timeDeparture.getFullYear()}-${timeDeparture.getMonth()+1 < 10 ? '0'+Number(timeDeparture.getMonth()+1):timeDeparture.getMonth()+1}-${timeDeparture.getDate()+1 < 10 ? '0'+Number(timeDeparture.getDate()+1):timeDeparture.getDate()+1}T${timeDeparture.getHours()}:${timeDeparture.getMinutes()}:00.000Z`;
+  var gpsPoint = {
+    "infectionStatus": true,
+    "location": {
+      "coordinates": {
+        "longitude": position.longitude,
+        "latitude:": position.latitude
+      }
+    },
+    "timeArrival": arrivalString,
+    "timeDeparture": departureString
+   // 2020-03-20T07:31:00.548Z
+  }
+  gpsPoints.push(gpsPoint);
+  console.log(gpsPoint)
+}
 function onError(error) {
   alert("Can't reach the remote server")
 }
