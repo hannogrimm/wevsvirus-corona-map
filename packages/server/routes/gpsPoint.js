@@ -8,11 +8,8 @@ router.get('/', async (req, res) => {
   console.log('getting gpsPoint')
 
   try {
-    await GpsPointsModel.find({}, (gpsPoints) => {
+    const gpsPoints = await GpsPointsModel.find({ isInfected:true })
       res.json(gpsPoints)
-    })
-
-    
   } catch (err) {
     console.error(err.message)
     res.status(500).send('Server Error')
