@@ -19,7 +19,7 @@ const HomePage = () => {
       <Navbar />
 
       <div style={{ paddingLeft: 55 }}>
-        <h5>{t('home.headline')}</h5>
+        <h5 style={{ fontWeight: '900', marginBottom: 15 }}>{t('home.headline')}</h5>
         <div className="hero-header" style={{ paddingBottom: '50px' }}>
           <div style={{ flex: '50%' }}>
             <h1>{t('home.prompt')}</h1>

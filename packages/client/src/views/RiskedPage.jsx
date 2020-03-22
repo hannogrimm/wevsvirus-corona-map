@@ -16,10 +16,10 @@ const RiskedPage = () => {
       <div className="container" style={{ paddingBottom: '50px' }}>
         <h5 style={{ textAlign: 'right' }}>{t('risked.thanks')}</h5>
         <div className="hero-header">
-          <div className="form" style={{ flex: '40%' }}>
-            <LocationForm infected={false}/>
+          <div className="form">
+            <LocationForm infected={false} />
           </div>
-          <div style={{ flex: '60%', textAlign: 'right' }}>
+          <div style={{ marginLeft: '50%', flex: '100%', textAlign: 'right' }}>
             <h1>{t('risked.prompt')}</h1>
             <p>{t('risked.info')}</p>
           </div>
