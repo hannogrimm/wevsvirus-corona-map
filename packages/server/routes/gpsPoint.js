@@ -5,18 +5,9 @@ require('express-validator')
 
 const GpsPointsModel = require('../models/gpspoint')
 
-const whitelist = ['http://example1.com', 'http://example2.com']
-const corsOptionsDelegate =  (req, callback) => {
-let corsOptions;
-  if (whitelist.indexOf(req.header('Origin')) !== -1) {
-    corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
-  } else {
-    corsOptions = { origin: false } // disable CORS for this request
-  }
-  callback(null, corsOptions) // callback expects two parameters: error and options
-}
+router.use(cors())
 
-router.post('/getnearby', cors(corsOptionsDelegate), async (req, res) => {
+router.post('/getnearby', async (req, res) => {
   console.log('getting gpsPoint')
 
   try {
