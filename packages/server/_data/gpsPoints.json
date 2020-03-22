@@ -1,0 +1,22 @@
+[
+  {
+    "infectionStatus": "isInfected",
+    "location": {
+      "coordinates": {
+        "longitude": 12344,
+        "latidude": 34567
+      }
+    },
+    "datetime": "2020-03-22T11:31:44.548Z"
+  },  
+  {
+    "infectionStatus": "isInfected",
+    "location": {
+      "coordinates": {
+        "longitude": 12344,
+        "latidude": 34567
+      }
+    },
+    "datetime": "2020-03-22T11:31:44.548Z"
+  }
+]

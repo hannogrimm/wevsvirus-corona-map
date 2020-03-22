@@ -3,6 +3,51 @@
     "text": "Deine Daten bleiben anonym.",
     "link": "Mehr Informationen darüber."
   },
+  "infobanner": {
+    "text": "Die Teilnahme ist freiwillig und anonynm, sämtliche Daten werden nur temporär gespeichert.",
+    "link": "Mehr Informationen"
+  },
+  "home": {
+    "headline": "Covid-19 (Coronavirus)",
+    "prompt": "Geomap (live)",
+    "info": "Verfolgen Sie Live Corona Risiko-Zonen und überprüfen sie anonym ob sie sich in Risikozonen aufgehalten haben.",
+    "info2": "Wir bitten alle mit Covid-19 infizierten Bürgerinnen und Bürger der Bundesregierung Deutschland, Ihre Bewegungs-Historie im öffentlichen Raum anonym anzugeben, um die Ausbreitung des Viruses zu stoppen.",
+    "cta": {
+      "infected": "Bei Infizierung helfen, die Ausbreitung zu stoppen",
+      "risked": "Eigenes Risikopotential überprüfen"
+    }
+  },
+  "steps": {
+    "header": {
+      "headline": "Risikopotential in Deinem Umfeld",
+      "text": "Verfolgen Sie Live Corona Risiko-Zonen und überprüfen Sie anonym ob Sie sich in Risikozonen aufgehalten haben."
+    }
+  },
+  "abouttheproject": {
+    "headline": "Informationen zum Projekt",
+    "texts": {
+      "anonymous": {
+        "around1": "Sämtliche Daten über deine Aufenthaltshistorie werden",
+        "bold": "anonym und nur temporär",
+        "around2": "zur Visualisierung der Risikozonen gespeichert."
+      },
+      "nopersonaldata": {
+        "around1": "Den Daten sind",
+        "bold": "keine personenbezogene Informationen",
+        "around2": "hinterlegt und können und werden damit nicht gegen Dich verwendet."
+      },
+      "free": {
+        "around1": "Die Teilnahme ist",
+        "bold": "freiwillig und unverbindlich",
+        "around2": "."
+      },
+      "tobedeleted": {
+        "around1": "Nach offizieller Ausrufung des Endes der Corona Pandemie werden sämtliche Daten",
+        "bold": "unwiderruflich gelöscht",
+        "around2": "."
+      }
+    }
+  },
   "infected": {
     "prompt": "Hilf als infizierte Person",
     "thanks": "Danke, dass du hilfst, die Ausbreitung zu stoppen.",

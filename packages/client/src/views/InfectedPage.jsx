@@ -13,7 +13,7 @@ const InfectedPage = () => {
       <Navbar />
 
       <div className="container" style={{ paddingBottom: '50px' }}>
-        <h4 style={{ textAlign: 'right' }}>{t('infected.thanks')}</h4>
+        <h5 style={{ textAlign: 'right' }}>{t('infected.thanks')}</h5>
         <div className="hero-header">
           <div className="form" style={{ flex: '40%' }}>
             <LocationForm />

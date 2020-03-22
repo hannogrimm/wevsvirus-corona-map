@@ -1,25 +1,20 @@
 const mongoose = require('mongoose')
 
 const GPSPointsSchema = mongoose.Schema({
-  isInfected: {
-    type: Boolean,
-    required: true,
+  infectionStatus: {
+    type: String,
+    default: 'isInfected', //else: maybeInfected, notInfected (MVP only: "isInfected"!)
   },
   location: {
-    type: {
-      type: String, // Don't do `{ location: { type: String } }`
-      enum: ['Point'], // 'location.type' must be 'Point'
-      required: true,
-    },
-    coordinates: {
-      type: [Number],
-      required: true,
-    },
-    date: {
-      type: Date,
-      default: Date.now,
-    },
+      type: "Point",
+      coordinates: { 
+        longitude: Number, 
+        latitude: Number 
+      }
   },
+  datetime: {
+    type: Date
+  }
 })
 
-module.exports = mongoose.model('gpspoint', GPSPointsSchema)
+module.exports = mongoose.model('GpsPointsModel', GPSPointsSchema)

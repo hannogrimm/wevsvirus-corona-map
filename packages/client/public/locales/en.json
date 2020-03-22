@@ -3,6 +3,51 @@
     "text": "All your information will be anonymous.",
     "link": "Get more information."
   },
+  "infobanner": {
+    "text": "Participating is of free choice and kept anonymous. Collected data is saved only temporarly.",
+    "link": "More Information"
+  },
+  "home": {
+    "headline": "Covid-19 (Coronavirus)",
+    "prompt": "Geomap (live)",
+    "info": "Follow live Covid-19 risk areas and check anonymously if you recently visited a risk area.",
+    "info2": "We pledge all citiziens that positively tested for Covid-19 to anonymously enter their recent movement history in public areas to help stopping the spread of the virus.",
+    "cta": {
+      "infected": "In case of infection, enter your recent movements",
+      "risked": "Check personal risk potential"
+    }
+  },
+  "steps": {
+    "header": {
+      "headline": "Risk potential in your surroundings",
+      "text": "Follow live Covid-19 risk areas and check anonymously if you recently visited risk areas."
+    }
+  },
+  "abouttheproject": {
+    "headline": "Project Information",
+    "texts": {
+      "anonymous": {
+        "around1": "Sämtliche Daten über deine Aufenthaltshistorie werden",
+        "bold": "anonym und nur temporär",
+        "around2": "zur Visualisierung der Risikozonen gespeichert."
+      },
+      "nopersonaldata": {
+        "around1": "Den Daten sind",
+        "bold": "keine personenbezogene Informationen",
+        "around2": "hinterlegt und können und werden damit nicht gegen Dich verwendet."
+      },
+      "free": {
+        "around1": "Die Teilnahme ist",
+        "bold": "freiwillig und unverbindlich",
+        "around2": "."
+      },
+      "tobedeleted": {
+        "around1": "Nach offizieller Ausrufung des Endes der Corona Pandemie werden sämtliche Daten",
+        "bold": "unwiderruflich gelöscht",
+        "around2": "."
+      }
+    }
+  },
   "infected": {
     "prompt": "Help as an infected person",
     "thanks": "Thank you for your support to stop the spread.",
