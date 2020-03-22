@@ -8,10 +8,10 @@
     "link": "Mehr Informationen"
   },
   "home": {
-    "headline": "Covid-19 (Coronavirus)",
-    "prompt": "Geomap (live)",
-    "info": "Verfolgen Sie Live Corona Risiko-Zonen und überprüfen sie anonym ob sie sich in Risikozonen aufgehalten haben.",
-    "info2": "Wir bitten alle mit Covid-19 infizierten Bürgerinnen und Bürger der Bundesregierung Deutschland, Ihre Bewegungs-Historie im öffentlichen Raum anonym anzugeben, um die Ausbreitung des Viruses zu stoppen.",
+    "headline": "Dein Move gegen Corona",
+    "prompt": "Corolation",
+    "info": "Hilf als COVID-19 Infizierter mit die Ausbreitung zu stoppen und lade anonym deine Bewegungsdaten der letzten Wochen hoch.",
+    "info2": "So können potentielle Risiko-Zonen erkannt werden und andere leichter überprüfen ob sie sich bei dir angesteckt haben.",
     "cta": {
       "infected": "Bei Infizierung helfen, die Ausbreitung zu stoppen",
       "risked": "Eigenes Risikopotential überprüfen"
