@@ -8,7 +8,7 @@ import InfoBlockImage from '../components/InfoBlockImage.svg'
 import { Link } from 'react-router-dom'
 
 import Step1Image from '../components/Step1Image.png'
-import Step2Image from '../components/Step2Image.png'
+import Step2Image from '../components/Step2Image.svg'
 import HeatMap from '../HeatMap'
 
 const HomePage = () => {
@@ -84,8 +84,8 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div style={{ flex: '50%' }}>
-            <img alt="Step 2" src={Step2Image} />
+          <div style={{ flex: '50%', display: 'flex', justifyContent: 'center' }}>
+            <img alt="Step 2" style={{ maxWidth: 300 }} src={Step2Image} />
           </div>
         </div>
 
