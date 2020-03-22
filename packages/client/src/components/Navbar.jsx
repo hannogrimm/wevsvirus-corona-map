@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import Logo from './Logo'
 
 const Navbar = () => {
   const { i18n } = useTranslation()
@@ -10,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className="nav container">
-      <rect className="logo" width="100" height="40" />
+      <Logo />
       <div className="lang-option">
         <span className={i18n.language === 'de' ? 'selected' : ''} onClick={() => changeLanguage('de')}>
           DE

@@ -4,18 +4,38 @@ require('express-validator')
 
 const GpsPointsModel = require('../models/gpspoint')
 
-router.get('/', async (req, res) => {
+router.get('/test', async (req, res) => {
+  const resultLocations = await GpsPointsModel.find({})
+  res.json(resultLocations)
+})
+
+
+router.get('/complex', async (req, res) => {
   console.log('getting gpsPoint')
 
   try {
-    // request data from client
-    const { location } = req.body
+    // request data from client body
+    const { location, userArrived, userLeft } = req.body
 
-    // query db for coordinates where infected 
-    const foundLocations = await GpsPointsModel.find({ infectionStatus: 'isInfected', location }) 
+    // earth radius 
+    const earthEqotorialRadius = 3963.2
+    // search radius
+    const searchRadiusMiles = 2.5
+    
+    // final search query
+    const finalSearchQuery = { location:  
+      { $geoWithin: 
+        { $centerSphere: [location, searchRadiusMiles / earthEqotorialRadius] } 
+      } 
+    }
 
-    // send response array
-    res.json(foundLocations)
+    // { timeArrival: { $gte: userArrived } }
+
+    // querying db with final 
+    const resultLocations = await GpsPointsModel.find(finalSearchQuery)
+
+    // send response array as json
+    res.json(resultLocations)
 
   } catch (err) {
     console.error(err.message)
@@ -24,22 +44,21 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-
   try {
     // request data from client
-    const { infectionStatus, coordinates, datetime } = req.body
+    const { infectionStatus, location, timeArrival, timeDepature } = req.body
 
     // create new location object
-    const location = new GpsPointsModel({
+    const newLocation = new GpsPointsModel({
       infectionStatus,
-      coordinates,
-      datetime
+      location,
+      timeArrival,
+      timeDepature,
     })
 
     // save object to db, return 200
-    await location.save()
+    await newLocation.save()
     res.status(200).json('Location saved.')
-
   } catch (err) {
     console.error(err.message)
     res.status(500).send('Server Error')

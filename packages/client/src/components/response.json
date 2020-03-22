@@ -1,0 +1,75 @@
+{
+    "suggestions": [{
+        "label": "Deutschland, Großenaspe, <b>Hallo</b>h",
+        "language": "de",
+        "countryCode": "DEU",
+        "locationId": "NT_BbyRKTNii6UKe11ISqcpuD",
+        "address": {
+            "country": "Deutschland",
+            "state": "Schleswig-Holstein",
+            "county": "Segeberg",
+            "city": "Großenaspe",
+            "street": "<b>Hallo</b>h",
+            "postalCode": "24623"
+        },
+        "matchLevel": "street"
+    }, {
+        "label": "Deutschland, Sprockhövel, <b>Hallo</b>h",
+        "language": "de",
+        "countryCode": "DEU",
+        "locationId": "NT_N7whZ5Z3B3Y5EoZL.PyIjC",
+        "address": {
+            "country": "Deutschland",
+            "state": "Nordrhein-Westfalen",
+            "county": "Ennepe-Ruhr-Kreis",
+            "city": "Sprockhövel",
+            "district": "<b>Hallo</b>h",
+            "postalCode": "45549"
+        },
+        "matchLevel": "district"
+    }, {
+        "label": "Deutschland, Boostedt, <b>Hallo</b>h",
+        "language": "de",
+        "countryCode": "DEU",
+        "locationId": "NT_JvC1DuGBxwmwC-KDA39rWB",
+        "address": {
+            "country": "Deutschland",
+            "state": "Schleswig-Holstein",
+            "county": "Segeberg",
+            "city": "Boostedt",
+            "street": "<b>Hallo</b>h",
+            "postalCode": "24598"
+        },
+        "matchLevel": "street"
+    }, {
+        "label": "Deutschland, Essen, <b>Hallo</b>straße",
+        "language": "de",
+        "countryCode": "DEU",
+        "locationId": "NT_7dxHDaBGu226-GNUoQSauD",
+        "address": {
+            "country": "Deutschland",
+            "state": "Nordrhein-Westfalen",
+            "county": "Essen",
+            "city": "Essen",
+            "district": "Stoppenberg",
+            "street": "<b>Hallo</b>straße",
+            "postalCode": "45141"
+        },
+        "matchLevel": "street"
+    }, {
+        "label": "Deutschland, Halle (Saale), <b>Hallo</b>renring",
+        "language": "de",
+        "countryCode": "DEU",
+        "locationId": "NT_9lzSRJVqHifdhrJ.SX-gqA",
+        "address": {
+            "country": "Deutschland",
+            "state": "Sachsen-Anhalt",
+            "county": "Halle (Saale)",
+            "city": "Halle (Saale)",
+            "district": "Altstadt",
+            "street": "<b>Hallo</b>renring",
+            "postalCode": "06108"
+        },
+        "matchLevel": "street"
+    }]
+}

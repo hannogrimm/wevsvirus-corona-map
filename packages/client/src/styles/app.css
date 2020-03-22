@@ -15,7 +15,7 @@ p {
 
 a {
   color: #000;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 strong {
@@ -79,6 +79,11 @@ button:active {
   padding-right: 75px;
 }
 
+.additional-container {
+  padding-left: 100px;
+  padding-right: 200px;
+}
+
 .lang-option span {
   color: #7e7a7a;
   padding: 8px;
@@ -136,4 +141,88 @@ button:active {
 .cta-button.primary {
   background-color: #f6bd60;
   border-color: transparent;
+}
+
+.footingfooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  width: 100%;
+  height: 64px;
+}
+
+.footingfooter-link {
+  color: #fff;
+  margin: 0 20px 0;
+  font-size: 13px;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.footer {
+  background-color: #c4c4c4;
+  padding: 50px 275px 100px;
+}
+
+.footer-blocks {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-block label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer-block span,
+.footer-block a {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.footer-block a {
+  text-decoration: none;
+}
+
+.footer-block {
+  width: 150px;
+  margin: 0 60px;
+}
+
+.footer-block:first-of-type {
+  margin-left: 0;
+}
+
+.footer-block:last-of-type {
+  margin-right: 0;
+}
+
+.inline-cta {
+  font-size: 13px;
+  color: #f6bd60;
+  text-transform: uppercase;
+  margin-right: 20px;
+  font-weight: 900;
+}
+
+.inline-cta:hover:before {
+  margin-right: 16px;
+}
+
+.inline-cta:before {
+  content: '>';
+  color: #f6bd60;
+  font-size: 14px;
+  margin-right: 8px;
+  transition: 0.2s all ease;
+}
+
+.app-step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 75px 0 50px;
 }

@@ -21,6 +21,22 @@
     "header": {
       "headline": "Risk potential in your surroundings",
       "text": "Follow live Covid-19 risk areas and check anonymously if you recently visited risk areas."
+    },
+    "step1": {
+      "headline": "Evaluate Your Situation",
+      "text1": "Choose between the following buttons based on the confirmation of your infection. Have you been positively tested? Or are you just showing symptoms?",
+      "text2": "In case you are infected, we ask you for your help to stop the spread and report your recent public movement activity anonymously.",
+      "cta_infected": "I am infected",
+      "cta_risked": "I am not infected"
+    },
+    "step2": {
+      "headline": "Share Your Recent Movements",
+      "text1": "Enter your recent movement history in public places including date and duration or import them directly via Google Timeline (coming soon)."
+    },
+    "step3": {
+      "headline": "Overview Your Findings",
+      "text1": "For the case that you infected, you potentially help others with your movement history sharing to protect themselves from an infection.",
+      "text2": "You will receive a detailed overview about your shared whereabouts and get a report if you potentially came in contact with an infection."
     }
   },
   "abouttheproject": {
@@ -58,7 +74,31 @@
     "thanks": "Check your last whereabouts for Covid-19 cases",
     "info": "Try to remember your recent movement history through public spaces in the last 4 days. Enter locations of places as shopping malls, schools, parks etc. that you visited recently."
   },
+
+  "footer": {
+    "service": {
+      "label": "Service",
+      "infected": "For Infected People",
+      "risked": "For Risked People"
+    },
+    "aboutus": {
+      "label": "About Us"
+    },
+    "support": {
+      "label": "Support",
+      "contact": "Contact",
+      "updates": "Recent News"
+    },
+    "supportedby": {
+      "label": "Supported by"
+    }
+  },
+  "links": {
+    "imprint": "Imprint",
+    "datapolicy": "Data Policy"
+  },
   "date": "date",
-  "time": "time"
+  "time": "time",
+  "addToTimeline": "Add to Timeline"
 
 }
