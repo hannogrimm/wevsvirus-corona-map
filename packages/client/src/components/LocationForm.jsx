@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-
+import { useTranslation } from 'react-i18next'
 const API_KEY = process.env.REACT_APP_HERE_API_KEY ? process.env.REACT_APP_HERE_API_KEY : 'unknown'
 
 
@@ -81,18 +81,28 @@ function addLocation(e) {
 
 }
 
+function uploadInfections(e) {
+  e.preventDefault();
 
-function generateForm() {
-  var form = document.createElement("form");
-  form.id = "location-form"
-  var formHeader = document.createElement("h3")
-  formHeader.innerText = "{t('checkLocations')}";
-  form.appendChild(formHeader);
-  return form
+  // Add backend connection to upload infected locations here
 }
 
-const LocationForm = () => {
+function checkInfected(e) {
+  e.preventDefault();
 
+  // Add backend connection to get infected locations and check against user's location
+}
+
+const LocationForm = (props) => {
+  const { t } = useTranslation();
+
+  var submitButton;
+  if(props.infected){
+    submitButton = <button onClick={uploadInfections}>{t('uploadInfections')}</button>
+  } else {
+    submitButton = <button onClick={checkInfected}>{t('checkInfected')}</button>
+  }
+  
   return ( 
     <>
     <span> I will be a form </span> 
@@ -100,6 +110,7 @@ const LocationForm = () => {
     <div id="location-1">
 <Location nLocation={1}/>
     </div>
+    {submitButton}
     </form>
     </>
   )

@@ -16,7 +16,7 @@ const RiskedPage = () => {
         <h5 style={{ textAlign: 'right' }}>{t('risked.thanks')}</h5>
         <div className="hero-header">
           <div className="form" style={{ flex: '40%' }}>
-            <LocationForm />
+            <LocationForm infected={false}/>
           </div>
           <div style={{ flex: '60%', textAlign: 'right' }}>
             <h1>{t('risked.prompt')}</h1>
