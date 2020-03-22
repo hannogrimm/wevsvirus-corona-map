@@ -38,6 +38,12 @@ h5 {
   margin-top: 0;
 }
 
+@media (max-width: 700px) {
+  h1 {
+    font-size: 50px;
+  }
+}
+
 h1 {
   font-size: 70px;
   margin-bottom: 70px;
@@ -124,6 +130,12 @@ button:active {
   justify-content: space-between;
 }
 
+/* @media (max-width: 700px) {
+  .hero-img {
+    -bottom: 2rem;
+  }
+} */
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -135,6 +147,9 @@ button:active {
   }
   .flex-row {
     flex-direction: column;
+  }
+  .cta-button.primary {
+    margin: 2rem;
   }
 }
 .cta-button {

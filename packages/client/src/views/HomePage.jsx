@@ -20,7 +20,7 @@ const HomePage = () => {
 
       <div style={{ paddingLeft: 55 }}>
         <h5 style={{ fontWeight: '900', marginBottom: 15 }}>{t('home.headline')}</h5>
-        <div className="hero-header" style={{ paddingBottom: '50px' }}>
+        <div className="hero-header" style={{ paddingBottom: '10px' }}>
           <div style={{ flex: '50%' }}>
             <h1>{t('home.prompt')}</h1>
             <p>
@@ -30,7 +30,7 @@ const HomePage = () => {
               {t('home.info2')}
             </p>
           </div>
-          <div style={{ flex: '60%', display: 'flex', alignItems: 'center' }}>
+          <div className="hero-img" style={{ flex: '60%', minWidth: '500px', display: 'flex', alignItems: 'center' }}>
             <img alt="hero" style={{ width: '100%' }} src={Hero} />
           </div>
         </div>
