@@ -8,8 +8,15 @@ router.get('/', async (req, res) => {
   console.log('getting gpsPoint')
 
   try {
-    const gpsPoints = await GpsPointsModel.find({ isInfected: true })
-    res.json(gpsPoints)
+    // request data from client
+    const { location } = req.body
+
+    // query db for coordinates where infected 
+    const foundLocations = await GpsPointsModel.find({ infectionStatus: 'isInfected', location }) 
+
+    // send response array
+    res.json(foundLocations)
+
   } catch (err) {
     console.error(err.message)
     res.status(500).send('Server Error')
@@ -17,25 +24,22 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  console.log('posting gpsPoint', req.body)
 
   try {
     // request data from client
-    const { isInfected, city, postcode, coordinates, date } = req.body
+    const { infectionStatus, coordinates, datetime } = req.body
 
-    // create new gps point object
-    const gpsPoint = new GpsPointsModel({
-      isInfected,
+    // create new location object
+    const location = new GpsPointsModel({
+      infectionStatus,
       coordinates,
-      city,
-      postcode,
-      date,
+      datetime
     })
 
-    // save object to db
-    await gpsPoint.save()
+    // save object to db, return 200
+    await location.save()
+    res.status(200).json('Location saved.')
 
-    res.status(200).json('GPS Points saved.')
   } catch (err) {
     console.error(err.message)
     res.status(500).send('Server Error')

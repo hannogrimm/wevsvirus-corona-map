@@ -1,26 +1,17 @@
 const mongoose = require('mongoose')
 
 const GPSPointsSchema = mongoose.Schema({
-  isInfected: {
-    type: Boolean,
-    required: true,
-  },
-  coordinates: {
-    type: [Number],
-    required: true,
-  },
-  /* city: {
+  infectionStatus: {
     type: String,
-    required: true,
-  }, */
-  postcode: {
-    type: Number,
-    required: true,
+    default: 'isInfected' //else: maybeInfected, notInfected
   },
-  date: {
-    type: Date,
-    default: Date.now,
+  location: {
+      type: "Point",
+      coordinates: [Number]
   },
+  datetime: {
+    type: Date
+  }
 })
 
 module.exports = mongoose.model('GpsPointsModel', GPSPointsSchema)
