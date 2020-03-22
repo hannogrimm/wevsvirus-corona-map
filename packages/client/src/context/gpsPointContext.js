@@ -1,5 +1,5 @@
-import { gpsPointsContext } from "react"
+import { createContext, useContext } from 'react'
 
-const gpsPointsContext = createContext()
+export const GpsPointsContext = createContext()
 
-export default gpsPointsContext
+export const useGPSContext = () => useContext(GpsPointsContext)

@@ -1,7 +1,6 @@
-import React, { useReducer } from "react"
-import axios from "axios"
-import GpsPointContext from "./gpspointContext"
-import gpspointReducer from "./gpspointReducer"
+import React, { useReducer, createContext, useContext } from 'react'
+import axios from 'axios'
+import gpspointReducer from './gpspointReducer'
 import {
   GET_GPSPOINTS,
   ADD_GPSPOINT,
@@ -12,32 +11,34 @@ import {
   FILTER_GPSPOINTS,
   CLEAR_GPSPOINTS,
   CLEAR_FILTER,
-  GPSPOINT_ERROR
-} from "../types"
+  GPSPOINT_ERROR,
+} from '../types'
 
-const GpsPointState = props => {
-  const initialState = {
-    gpspoints: null,
-    current: null,
-    filtered: null,
-    error: null
-  }
+const defaultStateValue = {
+  gpspoints: null,
+  current: null,
+  filtered: null,
+  error: null,
+}
+
+export const GpsPointState = props => {
+  const initialState = defaultStateValue
 
   const [state, dispatch] = useReducer(gpspointReducer, initialState)
 
   // Get GpsPoints
   const getGpsPoints = async () => {
     try {
-      const res = await axios.get("/api/gpspoints")
+      const res = await axios.get('/api/gpspoints')
 
       dispatch({
         type: GET_GPSPOINTS,
-        payload: res.data
+        payload: res.data,
       })
     } catch (err) {
       dispatch({
         type: GPSPOINT_ERROR,
-        payload: err.response.msg
+        payload: err.response.msg,
       })
     }
   }
@@ -46,21 +47,21 @@ const GpsPointState = props => {
   const addGpsPoint = async gpspoint => {
     const config = {
       headers: {
-        "Content-Type": "application/json"
-      }
+        'Content-Type': 'application/json',
+      },
     }
 
     try {
-      const res = await axios.post("/api/gpspoints", gpspoint, config)
+      const res = await axios.post('/api/gpspoints', gpspoint, config)
 
       dispatch({
         type: ADD_GPSPOINT,
-        payload: res.data
+        payload: res.data,
       })
     } catch (err) {
       dispatch({
         type: GPSPOINT_ERROR,
-        payload: err.response.msg
+        payload: err.response.msg,
       })
     }
   }
@@ -72,12 +73,12 @@ const GpsPointState = props => {
 
       dispatch({
         type: DELETE_GPSPOINT,
-        payload: id
+        payload: id,
       })
     } catch (err) {
       dispatch({
         type: GPSPOINT_ERROR,
-        payload: err.response.msg
+        payload: err.response.msg,
       })
     }
   }
@@ -86,25 +87,21 @@ const GpsPointState = props => {
   const updateGpsPoint = async gpspoint => {
     const config = {
       headers: {
-        "Content-Type": "application/json"
-      }
+        'Content-Type': 'application/json',
+      },
     }
 
     try {
-      const res = await axios.put(
-        `/api/gpspoints/${gpspoint._id}`,
-        gpspoint,
-        config
-      )
+      const res = await axios.put(`/api/gpspoints/${gpspoint._id}`, gpspoint, config)
 
       dispatch({
         type: UPDATE_GPSPOINT,
-        payload: res.data
+        payload: res.data,
       })
     } catch (err) {
       dispatch({
         type: GPSPOINT_ERROR,
-        payload: err.response.msg
+        payload: err.response.msg,
       })
     }
   }
@@ -135,7 +132,7 @@ const GpsPointState = props => {
   }
 
   return (
-    <GpsPointContext.Provider
+    <GpsPointsContext.Provider
       value={{
         gpspoints: state.gpspoints,
         current: state.current,
@@ -149,12 +146,14 @@ const GpsPointState = props => {
         filterGpsPoints,
         clearFilter,
         getGpsPoints,
-        clearGpsPoints
+        clearGpsPoints,
       }}
     >
       {props.children}
-    </GpsPointContext.Provider>
+    </GpsPointsContext.Provider>
   )
 }
 
-export default GpsPointState
+export const GpsPointsContext = createContext(defaultStateValue)
+
+export const useGPSContext = () => useContext(GpsPointsContext)
