@@ -7,7 +7,7 @@ const GpsPointsModel = require('../models/gpspoint')
 
 const whitelist = ['http://example1.com', 'http://example2.com']
 const corsOptionsDelegate =  (req, callback) => {
-const corsOptions;
+let corsOptions;
   if (whitelist.indexOf(req.header('Origin')) !== -1) {
     corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
   } else {
