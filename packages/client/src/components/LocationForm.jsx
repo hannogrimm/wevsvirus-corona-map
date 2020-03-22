@@ -60,7 +60,7 @@ class Location extends React.Component {
 function addLocation(e) {
   e.preventDefault();
   var form = document.getElementById("location-form");
-  var nLocation = form.children.lengt;
+  var nLocation = form.children.length;
   //console.log(form.children);
  var div = document.createElement("div");
  div.id = `location-${nLocation}`
