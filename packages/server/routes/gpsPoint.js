@@ -5,7 +5,7 @@ require('express-validator')
 const GpsPointsModel = require('../models/gpspoint')
 
 
-router.get('/', async (req, res) => {
+router.post('/get', async (req, res) => {
   console.log('getting gpsPoint')
 
   try {
@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.post('/', async (req, res) => {
+router.post('/new', async (req, res) => {
   try {
     // request data from client
     const { infectionStatus, location, timeArrival, timeDepature } = req.body
