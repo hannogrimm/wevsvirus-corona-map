@@ -1,19 +1,399 @@
 [
   {
-    "_id": "5d713995b721c3bb38c1f5d0",
-    "infectionStatus": "",
-    "coordinates": [ , ],
-    "startDate": ,
-    "endDate": 
-
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000050"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.52155562296878, 13.420192602818739],
+    "timeArrival": { "$date": "2019-06-14T22:49:00.000Z" },
+    "timeDepature": { "$date": "2019-06-14 23:49:00 UTC" }
   },
   {
-    "_id": "5d713a66ec8f2b88b8f830b8"
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000051"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.5150990662719, 13.407459827032683],
+    "timeArrival": { "$date": "2020-01-07T14:06:20.000Z" },
+    "timeDepature": { "$date": "2020-01-07 15:06:20 UTC" }
   },
   {
-    "_id": "5d725a037b292f5f8ceff787"
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000052"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.519481921511876, 13.416734005820842],
+    "timeArrival": { "$date": "2019-09-24T12:25:29.000Z" },
+    "timeDepature": { "$date": "2019-09-24 13:25:29 UTC" }
   },
   {
-    "_id": "5d725a1b7b292f5f8ceff788"
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000053"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.51091032247644, 13.373741793942918],
+    "timeArrival": { "$date": "2019-04-20T16:31:44.000Z" },
+    "timeDepature": { "$date": "2019-04-20 17:31:44 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000054"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.504821649484526, 13.350404609754124],
+    "timeArrival": { "$date": "2019-10-28T16:08:28.000Z" },
+    "timeDepature": { "$date": "2019-10-28 17:08:28 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000055"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates":  [52.504095065283835, 13.340894732486728],
+    "timeArrival": { "$date": "2019-04-25T14:19:31.000Z" },
+    "timeDepature": { "$date": "2019-04-25 15:19:31 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000056"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.502415870932, 13.473762921981539],
+    "timeArrival": { "$date": "2019-11-08T02:27:06.000Z" },
+    "timeDepature": { "$date": "2019-11-08 03:27:06 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000057"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.529971297747, 13.441762554203988],
+    "timeArrival": { "$date": "2019-06-16T12:51:25.000Z" },
+    "timeDepature": { "$date": "2019-06-16 13:51:25 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000058"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.535878662450024, 13.432407448899351],
+    "timeArrival": { "$date": "2019-07-16T13:40:59.000Z" },
+    "timeDepature": { "$date": "2019-07-16 14:40:59 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000059"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.54725486893168, 13.412988119689457],
+    "timeArrival": { "$date": "2019-08-06T13:59:44.000Z" },
+    "timeDepature": { "$date": "2019-08-06 14:59:44 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae00005a"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.532819239023794 13.39940258073603],
+    "timeArrival": { "$date": "2020-02-01T08:44:04.000Z" },
+    "timeDepature": { "$date": "2020-02-01 09:44:04 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae00005b"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.515098450671644, 13.395805397078668],
+    "timeArrival": { "$date": "2019-12-26T10:53:11.000Z" },
+    "timeDepature": { "$date": "2019-12-26 11:53:11 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae00005c"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.52714409645003, 13.405637968830513],
+    "timeArrival": { "$date": "2020-01-31T12:31:58.000Z" },
+    "timeDepature": { "$date": "2020-01-31 13:31:58 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae00005d"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.51042456488764 13.420067166718201],
+    "timeArrival": { "$date": "2019-10-04T11:43:08.000Z" },
+    "timeDepature": { "$date": "2019-10-04 12:43:08 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae00005e"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.50976395057751, 13.386671828112883],
+    "timeArrival": { "$date": "2020-02-22T07:02:19.000Z" },
+    "timeDepature": { "$date": "2020-02-22 08:02:19 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae00005f"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates":  [52.498604656108526, 13.39414842665382],
+    "timeArrival": { "$date": "2019-06-02T18:26:35.000Z" },
+    "timeDepature": { "$date": "2019-06-02 19:26:35 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000060"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.46706216930462, 13.43266742533352],
+    "timeArrival": { "$date": "2019-07-15T11:08:22.000Z" },
+    "timeDepature": { "$date": "2019-07-15 12:08:22 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000061"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.5128717680884, 13.321364129316667],
+    "timeArrival": { "$date": "2019-08-20T10:10:00.000Z" },
+    "timeDepature": { "$date": "2019-08-20 11:10:00 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000062"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.50990124588805, 13.325983010244538],
+    "timeArrival": { "$date": "2020-02-11T03:40:49.000Z" },
+    "timeDepature": { "$date": "2020-02-11 04:40:49 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000063"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.504249003617154, 13.331369681497481],
+    "timeArrival": { "$date": "2019-12-16T09:43:24.000Z" },
+    "timeDepature": { "$date": "2019-12-16 10:43:24 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000064"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.4980411668425, 13.330813311696708],
+    "timeArrival": { "$date": "2019-10-24T16:11:11.000Z" },
+    "timeDepature": { "$date": "2019-10-24 17:11:11 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000065"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.50320775422155, 13.349375831413413],
+    "timeArrival": { "$date": "2020-01-29T08:11:30.000Z" },
+    "timeDepature": { "$date": "2020-01-29 09:11:30 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000066"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.49481528272909, 13.34569064016938],
+    "timeArrival": { "$date": "2019-04-28T23:46:22.000Z" },
+    "timeDepature": { "$date": "2019-04-29 00:46:22 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000067"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.48067230330681, 13.345064471248149],
+    "timeArrival": { "$date": "2019-06-12T18:39:27.000Z" },
+    "timeDepature": { "$date": "2019-06-12 19:39:27 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000068"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.47116081039474, 13.339994424990921],
+    "timeArrival": { "$date": "2019-05-20T19:33:13.000Z" },
+    "timeDepature": { "$date": "2019-05-20 20:33:13 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000069"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.474257801252875, 13.455015282858396],
+    "timeArrival": { "$date": "2020-03-19T23:10:16.000Z" },
+    "timeDepature": { "$date": "2020-03-20 00:10:16 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae00006a"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.52057325834492, 13.417798189512492],
+    "timeArrival": { "$date": "2019-10-17T01:53:49.000Z" },
+    "timeDepature": { "$date": "2019-10-17 02:53:49 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae00006b"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.512509159661036, 13.365896979752007],
+    "timeArrival": { "$date": "2019-03-06T04:40:50.000Z" },
+    "timeDepature": { "$date": "2019-03-06 05:40:50 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae00006c"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.50597923340131, 13.372452027586569],
+    "timeArrival": { "$date": "2020-01-20T08:25:48.000Z" },
+    "timeDepature": { "$date": "2020-01-20 09:25:48 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae00006d"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.50657771696061, 13.385547961115313],
+    "timeArrival": { "$date": "2020-01-21T04:51:10.000Z" },
+    "timeDepature": { "$date": "2020-01-21 05:51:10 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae00006e"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.50745449297536, 13.403349771577146],
+    "timeArrival": { "$date": "2019-08-04T02:07:13.000Z" },
+    "timeDepature": { "$date": "2019-08-04 03:07:13 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae00006f"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.50317450279957, 13.418843153156493],
+    "timeArrival": { "$date": "2019-09-25T09:20:59.000Z" },
+    "timeDepature": { "$date": "2019-09-25 10:20:59 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000070"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.49898770151910,6 13.42713609793238],
+    "timeArrival": { "$date": "2020-02-29T01:40:17.000Z" },
+    "timeDepature": { "$date": "2020-02-29 02:40:17 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000071"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.4912768845407, 13.387638899984767],
+    "timeArrival": { "$date": "2020-01-30T07:31:06.000Z" },
+    "timeDepature": { "$date": "2020-01-30 08:31:06 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000072"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.48487008891184, 13.382617409637424],
+    "timeArrival": { "$date": "2019-05-31T20:21:24.000Z" },
+    "timeDepature": { "$date": "2019-05-31 21:21:24 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000073"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates":  [52.476570235064074, 13.439457160065865],
+    "timeArrival": { "$date": "2019-07-27T07:11:38.000Z" },
+    "timeDepature": { "$date": "2019-07-27 08:11:38 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000074"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.52370800800749, 13.466301497162442],
+    "timeArrival": { "$date": "2019-04-23T10:51:51.000Z" },
+    "timeDepature": { "$date": "2019-04-23 11:51:51 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000075"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates":  [52.52076714783958, 13.406185234398173],
+    "timeArrival": { "$date": "2019-08-06T09:42:22.000Z" },
+    "timeDepature": { "$date": "2019-08-06 10:42:22 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000076"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.51288469634722, 13.409937190018296],
+    "timeArrival": { "$date": "2019-05-27T07:09:12.000Z" },
+    "timeDepature": { "$date": "2019-05-27 08:09:12 UTC" }
+  },
+  {
+    "_id": {
+      "$oid": "5e77a45ffc13ae6dae000077"
+    },
+    "infectionStatus": "isInfected",
+    "coordinates": [52.51412456025619, 13.41715583528796],
+    "timeArrival": { "$date": "2019-11-29T23:59:46.000Z" },
+    "timeDepature": { "$date": "2019-11-30 00:59:46 UTC" }
   }
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
