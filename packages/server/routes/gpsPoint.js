@@ -16,26 +16,22 @@ router.get('/', async (req, res) => {
     // search radius
     const searchRadiusMiles = 2.5
 
-    // query db for:
-    const resultLocations = await GpsPointsModel.find(
-      // 1. location 
-      { location: 
-        // in 2.5 mile range of req. location
-        { $geoWithin: { $centerSphere: [location, searchRadiusMiles / earthEqotorialRadius] } } 
-      },
-      // 2. time
-      { datetime:
-        // in between arrival and depature 
-        { $and: [{ timeArrival: { $gte: timeArrival } }, { timeDepature: { $lte: timeArrival } }] }
-      },
-      // 3. infection
-      { infectionStatus: 
-        'isInfected' 
-      }
-    )
+    // db querys for: 1. location
+    const queryForLocation = { location: { $geoWithin: { $centerSphere: [location, searchRadiusMiles / earthEqotorialRadius] } } }
+    // 2. time
+    const queryForTime = { datetime: { $and: [ { timeArrival: { $gte: timeArrival } }, { timeDepature: { $lte: timeDepature } } ] } }
+    // 3. infection
+    const queryForInfection = { infectionStatus: 'isInfected' }
+    
+    // final search query
+    const finalSearchQuery = queryForLocation + "," + queryForTime + "," + queryForInfection
+
+    // querying db with final 
+    const resultLocations = await GpsPointsModel.find(finalSearchQuery)
 
     // send response array
     res.json(resultLocations)
+
   } catch (err) {
     console.error(err.message)
     res.status(500).send('Server Error')
