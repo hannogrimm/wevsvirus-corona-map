@@ -1,3 +1,11 @@
+@import '~antd/lib/input/style/index.css';
+@import '~antd/lib/date-picker/style/index.css';
+@import '~antd/lib/time-picker/style/index.css';
+@import '~antd/lib/form/style/index.css';
+@import '~antd/lib/dropdown/style/index.css';
+@import '~antd/lib/grid/style/index.css';
+@import '~antd/lib/button/style/index.css';
+
 html,
 body {
   font-family: 'Lato', sans-serif;
@@ -225,4 +233,22 @@ button:active {
   flex-direction: row;
   align-items: center;
   margin: 75px 0 50px;
+}
+
+.location-form {
+  position: absolute;
+  z-index: 100;
+  width: 480px;
+  padding: 35px;
+  background-color: #fff;
+  box-shadow: 0px 10px 30px rgba(160, 160, 160, 0.35);
+}
+
+.location-form .ant-form-item-label > label {
+  color: #000;
+  font-weight: bold;
+}
+
+.location-form .ant-form-item-label > label:after {
+  content: '';
 }

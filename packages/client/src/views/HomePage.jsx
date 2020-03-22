@@ -89,12 +89,12 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div class="app-step" style={{ paddingRight: 200 }}>
-          <div style={{ flex: '70%' }}>
-            <HeatMap />
+        <div class="app-step" style={{ paddingRight: 200, marginBottom: 50 }}>
+          <div style={{ flex: '60%' }}>
+            <HeatMap height="40vh" />
           </div>
 
-          <div style={{ flex: '30%' }}>
+          <div style={{ flex: '40%', marginLeft: 100 }}>
             <h4>{t('steps.step3.headline')}</h4>
             <p>
               <span>{t('steps.step3.text1')}</span>

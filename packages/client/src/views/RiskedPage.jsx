@@ -2,8 +2,9 @@ import React from 'react'
 import AnonymousBanner from '../components/AnonymousBanner'
 import Navbar from '../components/Navbar'
 import ClickableMap from '../ClickableMap'
-import LocationForm from '../components/LocationForm'
+import LocationForm from '../components/form/LocationForm'
 import { useTranslation } from 'react-i18next'
+import HeatMap from '../HeatMap'
 
 const RiskedPage = () => {
   const { t } = useTranslation()
@@ -25,7 +26,7 @@ const RiskedPage = () => {
         </div>
       </div>
 
-      <ClickableMap />
+      <HeatMap />
     </>
   )
 }

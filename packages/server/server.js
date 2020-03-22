@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
 }
 // Define Routes
-app.use('/api/gpsPoint', require('./routes/gpsPoint'))
+app.use('/api/gpspoint', require('./routes/gpspoint'))
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {

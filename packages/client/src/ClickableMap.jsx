@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import i18n from "i18next";
+import i18n from 'i18next'
 const API_KEY = process.env.REACT_APP_HERE_API_KEY ? process.env.REACT_APP_HERE_API_KEY : 'unknown'
 
 var gpsPoints = []
@@ -11,19 +11,19 @@ function reverseGeocode(platform, coord, ui, t) {
       prox: `${coord.lat},${coord.lng}`, // Coords from click event
       mode: 'retrieveAddresses',
       maxresults: '1',
-      jsonattributes: 1
-    };
+      jsonattributes: 1,
+    }
 
   geocoder.reverseGeocode(
     reverseGeocodingParameters,
-    (result) => {
-      var locations = result.response.view[0].result;
-      console.log(locations[0]);
-      addLocationBubble(locations[0].location, ui, t);
-  },
+    result => {
+      var locations = result.response.view[0].result
+      console.log(locations[0])
+      addLocationBubble(locations[0].location, ui, t)
+    },
 
     onError
-  );
+  )
 }
 
 function onSuccess(result) {
@@ -33,18 +33,20 @@ function onSuccess(result) {
   console.log(gpsPoints)
 }
 
-function addLocationBubble(location, ui, t){
-  var date = new Date();
+function addLocationBubble(location, ui, t) {
+  var date = new Date()
   var day = date.getDate()
-  var month = date.getMonth()+1;
-  if(day < 10){
+  var month = date.getMonth() + 1
+  if (day < 10) {
     day = `0${day}`
   }
-  if(month < 10){
+  if (month < 10) {
     month = `0${month}`
   }
-  var bubble = new window.H.ui.InfoBubble({ lng: location.displayPosition.longitude, lat: location.displayPosition.latitude }, {
-    content: `<div class="add-location-overlay">
+  var bubble = new window.H.ui.InfoBubble(
+    { lng: location.displayPosition.longitude, lat: location.displayPosition.latitude },
+    {
+      content: `<div class="add-location-overlay">
     <p>${location.address.label}</p>
     <form>
     <label for="time">${t("date")}</label>
@@ -56,14 +58,15 @@ function addLocationBubble(location, ui, t){
 
     <button id="btn-${location.displayPosition.longitude}-${location.displayPosition.latitude}">${t("addToTimeline")}</button>
     </form>
-    </div>`
-    // 
-    // 
- });
-  
-  ui.addBubble(bubble);
+    </div>`,
+      //
+      //
+    }
+  )
+
+  ui.addBubble(bubble)
   var button = document.getElementById(`btn-${location.displayPosition.longitude}-${location.displayPosition.latitude}`)
-  button.addEventListener("click", (e) => addToTimeline(e, location.displayPosition));
+  button.addEventListener('click', e => addToTimeline(e, location.displayPosition))
 }
 function addToTimeline(e, position) {
   e.preventDefault();
@@ -76,18 +79,18 @@ function addToTimeline(e, position) {
   var arrivalString = `${timeArrival.getFullYear()}-${timeArrival.getMonth()+1 < 10 ? '0'+Number(timeArrival.getMonth()+1):timeArrival.getMonth()+1}-${timeArrival.getDate()+1 < 10 ? '0'+Number(timeArrival.getDate()+1):timeArrival.getDate()+1}T${timeArrival.getHours()}:${timeArrival.getMinutes()}:00.000Z`;
   var departureString = `${timeDeparture.getFullYear()}-${timeDeparture.getMonth()+1 < 10 ? '0'+Number(timeDeparture.getMonth()+1):timeDeparture.getMonth()+1}-${timeDeparture.getDate()+1 < 10 ? '0'+Number(timeDeparture.getDate()+1):timeDeparture.getDate()+1}T${timeDeparture.getHours()}:${timeDeparture.getMinutes()}:00.000Z`;
   var gpsPoint = {
-    "infectionStatus": true,
-    "location": {
-      "coordinates": {
-        "longitude": position.longitude,
-        "latitude:": position.latitude
-      }
+    infectionStatus: true,
+    location: {
+      coordinates: {
+        longitude: position.longitude,
+        'latitude:': position.latitude,
+      },
     },
-    "timeArrival": arrivalString,
-    "timeDeparture": departureString
-   // 2020-03-20T07:31:00.548Z
+    timeArrival: arrivalString,
+    timeDeparture: departureString,
+    // 2020-03-20T07:31:00.548Z
   }
-  gpsPoints.push(gpsPoint);
+  gpsPoints.push(gpsPoint)
   console.log(gpsPoint)
 }
 function onError(error) {
@@ -118,17 +121,16 @@ const ClickableMap = () => {
 
     window.addEventListener('resize', () => map.getViewPort().resize())
 
-    var mapUILng = i18n.language;
-    if (mapUILng.search("de") >= 0){
-      mapUILng = "de-DE";
-    } else if ((mapUILng.search("en") >= 0)){
-      mapUILng = "en-US";
+    var mapUILng = i18n.language
+    if (mapUILng.search('de') >= 0) {
+      mapUILng = 'de-DE'
+    } else if (mapUILng.search('en') >= 0) {
+      mapUILng = 'en-US'
     }
 
     var ui = window.H.ui.UI.createDefault(map, defaultLayers, mapUILng)
 
     var mapEvents = new window.H.mapevents.MapEvents(map)
-
 
     // Add event listener:
     map.addEventListener('tap', function(evt) {
@@ -142,14 +144,14 @@ const ClickableMap = () => {
 
     // Instantiate the default behavior, providing the mapEvents object:
     var behavior = new window.H.mapevents.Behavior(mapEvents)
-  }, [lat, lng, zoom])
+  }, [lat, lng, t, zoom])
   return (
     <div style={{ justifyContent: 'center' }}>
       <div
         id="here-map"
         style={{
-          margin: 'auto',
-          width: '80%',
+          margin: '0',
+          width: '100%',
           height: '70vh',
         }}
       />

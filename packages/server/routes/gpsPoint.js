@@ -5,7 +5,7 @@ require('express-validator')
 const GpsPointsModel = require('../models/gpspoint')
 
 
-router.post('/get', async (req, res) => {
+router.post('/getnearby', async (req, res) => {
   console.log('getting gpsPoint')
 
   try {

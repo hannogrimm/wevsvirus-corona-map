@@ -27,10 +27,10 @@ function onError(error) {
   alert("Can't reach the remote server")
 }
 
-const HeatMap = () => {
-  const [lng, setLng] = useState(13)
+const HeatMap = props => {
+  const [lng, setLng] = useState(13.3)
   const [lat, setLat] = useState(52.5)
-  const [zoom, setZoom] = useState(9)
+  const [zoom, setZoom] = useState(12)
 
   useEffect(() => {
     const platform = new window.H.service.Platform({
@@ -76,9 +76,9 @@ const HeatMap = () => {
     <div
       id="here-map"
       style={{
-        margin: 'auto',
-        width: '80%',
-        height: '70vh',
+        margin: '0',
+        width: props && props.width ? props.width : '100%',
+        height: props && props.height ? props.height : '100vh',
       }}
     />
   )
