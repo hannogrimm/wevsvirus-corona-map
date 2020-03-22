@@ -30,7 +30,9 @@ const Footer = () => {
 
           <div className="footer-block">
             <label>{t('footer.supportedby.label')}</label>
-            <a target="_blank" href="https://wirvsvirushackathon.org/"><img alt="WirVsVirus Hackathon Logo" src={HackathonLogo} style={{ width: 164, height: 75 }} /></a>
+            <a target="_blank" href="https://wirvsvirushackathon.org/">
+              <img alt="WirVsVirus Hackathon Logo" src={HackathonLogo} style={{ width: 164, height: 75 }} />
+            </a>
           </div>
         </div>
       </div>
@@ -46,6 +48,9 @@ const FootingFooter = () => {
     <div className="footingfooter">
       <span className="footingfooter-link">{t('links.imprint')}</span>
       <span className="footingfooter-link">{t('links.datapolicy')}</span>
+      <span style={{ marginLeft: 75 }} className="footingfooter-link">
+        Made with lots of ♥ in Berlin
+      </span>
     </div>
   )
 }
