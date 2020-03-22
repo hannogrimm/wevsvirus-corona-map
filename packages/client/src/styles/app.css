@@ -25,6 +25,7 @@ p {
 a {
   color: #000;
   text-decoration: none;
+  cursor: pointer;
 }
 
 strong {
@@ -263,4 +264,9 @@ button:active {
 
 .location-form .ant-form-item-label > label:after {
   content: '';
+}
+
+button.ant-btn-sm span {
+  font-size: 13px !important;
+  color: #fff !important;
 }
