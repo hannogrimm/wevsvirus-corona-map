@@ -1,19 +1,17 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import Map from "./Map";
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+
+import './styles/app.css'
+import InfectedPage from './views/InfectedPage'
 
 const App = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>{t("hello")}</p>
-
-        <Map />
-      </header>
+      <InfectedPage />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
