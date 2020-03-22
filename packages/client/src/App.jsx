@@ -1,16 +1,18 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+
+import { Router } from 'react-router-dom'
+import { Routes } from './routes/Router'
+import history from './routes/history'
 
 import './styles/app.css'
-import InfectedPage from './views/InfectedPage'
 
 const App = () => {
-  const { t } = useTranslation()
-
   return (
-    <div className="App">
-      <InfectedPage />
-    </div>
+    <Router history={history}>
+      <div className="App">
+        <Routes />
+      </div>
+    </Router>
   )
 }
 
