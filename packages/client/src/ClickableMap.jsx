@@ -39,12 +39,12 @@ function addLocationBubble(location, ui, t){
     <p>${location.address.label}</p>
     <label for="time">${t("time")}</label>
     <input name="time" type="time"></input>
-    <label for="time">date</label>
+    <label for="time">${t("date")}</label>
     <input name="date" type="date"></input>
-    <button type="submit">Add to timeline</button>
+    <button type="submit">${t("addToTimeline")}</button>
     </div>`
     // 
-    // <label for="time">${t("date")}</label>
+    // 
  });
   
   ui.addBubble(bubble)
@@ -89,12 +89,6 @@ const ClickableMap = () => {
 
     var mapEvents = new window.H.mapevents.MapEvents(map)
 
-    var heatmapProvider = new window.H.data.heatmap.Provider({
-      opacity: 0.6,
-      assumeValues: false,
-    })
-
-    map.addLayer(new window.H.map.layer.TileLayer(heatmapProvider))
 
     // Add event listener:
     map.addEventListener('tap', function(evt) {
