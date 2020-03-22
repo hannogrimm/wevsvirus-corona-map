@@ -120,6 +120,7 @@
         }
       }
     },
-    "button": "Übermittele diesen Standort"
+    "button": "Übermittele diesen Standort",
+    "demoinfo": "Danke für die Übermittlung. Dies ist eine Demo Version, daher speichern wir deine angebenen Standort noch nicht. Wir informieren über eine funktioniernde Version in naher Zukunft!"
   }
 }

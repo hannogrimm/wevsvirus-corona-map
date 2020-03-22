@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next'
 const API_KEY = process.env.REACT_APP_HERE_API_KEY ? process.env.REACT_APP_HERE_API_KEY : 'unknown'
 
 const LocationForm = () => {
+  const [submitted, setSubmittedState] = useState(false)
   const { t } = useTranslation()
   const [autocompleteState, setAutocompleteState] = useState([])
   const inputRef = createRef()
@@ -44,6 +45,14 @@ const LocationForm = () => {
             start: null,
             end: null,
           },
+        }}
+        onSubmit={(data, actions) => {
+          actions.setSubmitting(true)
+          setTimeout(() => {
+            actions.setSubmitting(false)
+            actions.resetForm()
+            setSubmittedState(true)
+          }, 100)
         }}
         render={() => (
           <Form layout="vertical">
@@ -109,10 +118,15 @@ const LocationForm = () => {
             </div>
 
             <FormItem>
-              <button className="cta-button primary" style={{ borderRadius: 2, marginTop: 30, width: '100%' }}>
+              <button
+                type="submit"
+                className="cta-button primary"
+                style={{ borderRadius: 2, marginTop: 30, width: '100%' }}
+              >
                 {t('form.button')}
               </button>
             </FormItem>
+            {submitted && <span>{t('form.demoinfo')}</span>}
           </Form>
         )}
       />

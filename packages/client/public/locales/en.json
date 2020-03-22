@@ -121,6 +121,7 @@
         }
       }
     },
-    "button": "Share This Location"
+    "button": "Share This Location",
+    "demoinfo": "Thanks for the submit. This is a demo version. Your shared locations will not be stored. We share more information once we go online with a real-time map!"
   }
 }
