@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
       },
       // 2. time
       { datetime:
-        // in between arrival and depature time
+        // in between arrival and depature 
         { $and: [{ timeArrival: { $gte: timeArrival } }, { timeDepature: { $lte: timeArrival } }] }
       },
       // 3. infection
