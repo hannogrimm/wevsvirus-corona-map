@@ -14,12 +14,12 @@
     "info2": "We pledge all citiziens that positively tested for Covid-19 to anonymously enter their recent movement history in public areas to help stopping the spread of the virus.",
     "cta": {
       "infected": "In case of infection, enter your recent movements",
-      "risked": "Check personal risk potential"
+      "risked": "Check your personal activities"
     }
   },
   "steps": {
     "header": {
-      "headline": "Risk potential in your surroundings",
+      "headline": "Ensuring health protection made easy",
       "text": "Follow live Covid-19 risk areas and check anonymously if you recently visited risk areas."
     },
     "step1": {
@@ -51,11 +51,6 @@
         "around1": "Your data features",
         "bold": "no personal information",
         "around2": "and therefore can't or won't be used."
-      },
-      "free": {
-        "around1": "The participation",
-        "bold": "is voluntary and non-binding",
-        "around2": "."
       },
       "tobedeleted": {
         "around1": "After the official announcement of an end of the pandemic, all data will be ",

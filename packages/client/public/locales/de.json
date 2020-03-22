@@ -4,7 +4,7 @@
     "link": "Mehr Informationen darüber."
   },
   "infobanner": {
-    "text": "Die Teilnahme ist freiwillig und anonynm, sämtliche Daten werden nur temporär gespeichert.",
+    "text": "Die Teilnahme ist freiwillig und anonym, sämtliche Daten werden nur temporär gespeichert.",
     "link": "Mehr Informationen"
   },
   "home": {
@@ -14,18 +14,18 @@
     "info2": "So können potentielle Risiko-Zonen erkannt werden und andere leichter überprüfen ob sie sich bei dir angesteckt haben.",
     "cta": {
       "infected": "Als Infizierte/r helfen, die Ausbreitung zu stoppen",
-      "risked": "Eigenes Risikopotential überprüfen"
+      "risked": "Eigene Bewegungen überprüfen"
     }
   },
   "steps": {
     "header": {
-      "headline": "Risikopotential in Deinem Umfeld",
-      "text": "Verfolgen Sie Live Corona Risiko-Zonen und überprüfen Sie anonym ob Sie sich in Risikozonen aufgehalten haben."
+      "headline": "So einfach kannst du Leben retten",
+      "text": "Finde heraus ob du mit einem Infizierten in Kontakt warst oder stelle als Infizierter deine Aufenhaltsorte zur Verfügung."
     },
     "step1": {
       "headline": "Bestimme Deine Situation",
-      "text1": "Wähle je nach Deiner aktuellen Lage den Button aus, der Dir in Deiner Situation am meisten hilft.",
-      "text2": "Solltest Du betroffen sein, bitten wir Dich Deine letzten Aufenthaltsorte anzugeben, sodass andere Menschen geschützt werden können.",
+      "text1": "Wähle je nach deiner aktuellen Lage den Button aus,  der auf dich zutrifft.",
+      "text2": "Deine Angaben sind alle komplett anonym und können nicht zurückverfolgt werden.",
       "cta_infected": "Ich bin infiziert",
       "cta_risked": "Ich bin nicht infiziert"
     },
@@ -51,11 +51,6 @@
         "around1": "Den Daten sind",
         "bold": "keine personenbezogene Informationen",
         "around2": "hinterlegt und können und werden damit nicht gegen Dich verwendet."
-      },
-      "free": {
-        "around1": "Die Teilnahme ist",
-        "bold": "freiwillig und unverbindlich",
-        "around2": "."
       },
       "tobedeleted": {
         "around1": "Nach offizieller Ausrufung des Endes der Corona Pandemie werden sämtliche Daten",

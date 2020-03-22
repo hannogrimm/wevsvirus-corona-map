@@ -127,7 +127,7 @@ const HomePage = () => {
               <h2 style={{ textAlign: 'right' }}>{t('abouttheproject.headline')}</h2>
               <svg
                 style={{ marginRight: 100, marginLeft: 50, height: '100%' }}
-                width="15"
+                width="11"
                 viewBox="0 0 10 289"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -146,11 +146,6 @@ const HomePage = () => {
               <span>{t('abouttheproject.texts.nopersonaldata.around1')}</span>{' '}
               <strong>{t('abouttheproject.texts.nopersonaldata.bold')}</strong>{' '}
               <span>{t('abouttheproject.texts.nopersonaldata.around2')}</span>
-              <br />
-              <br />
-              <span>{t('abouttheproject.texts.free.around1')}</span>{' '}
-              <strong>{t('abouttheproject.texts.free.bold')}</strong>
-              <span>{t('abouttheproject.texts.free.around2')}</span>
               <br />
               <br />
               <span>{t('abouttheproject.texts.tobedeleted.around1')}</span>{' '}
