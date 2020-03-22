@@ -17,3 +17,4 @@ failed-*.md
 .imports
 LRs.csv
 node_modules
+.vscode
