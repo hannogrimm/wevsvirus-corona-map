@@ -7,7 +7,10 @@ const InfoBanner = () => {
   return (
     <div className="anonymous-banner">
       <span>
-        {t('infobanner.text')} <Link to="/#abouttheproject">{t('infobanner.link')}</Link>
+        {t('infobanner.text')}{' '}
+        <Link style={{ textDecoration: 'underline' }} to="/#abouttheproject">
+          {t('infobanner.link')}
+        </Link>
       </span>
     </div>
   )
