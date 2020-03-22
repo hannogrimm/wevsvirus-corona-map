@@ -49,7 +49,7 @@
       "$oid": "5e77a45ffc13ae6dae000055"
     },
     "infectionStatus": "isInfected",
-    "coordinates":  [52.504095065283835, 13.340894732486728],
+    "coordinates": [52.504095065283835, 13.340894732486728],
     "timeArrival": { "$date": "2019-04-25T14:19:31.000Z" },
     "timeDepature": { "$date": "2019-04-25 15:19:31 UTC" }
   },
@@ -94,7 +94,7 @@
       "$oid": "5e77a45ffc13ae6dae00005a"
     },
     "infectionStatus": "isInfected",
-    "coordinates": [52.532819239023794 13.39940258073603],
+    "coordinates": [52.532819239023794, 13.39940258073603],
     "timeArrival": { "$date": "2020-02-01T08:44:04.000Z" },
     "timeDepature": { "$date": "2020-02-01 09:44:04 UTC" }
   },
@@ -139,7 +139,7 @@
       "$oid": "5e77a45ffc13ae6dae00005f"
     },
     "infectionStatus": "isInfected",
-    "coordinates":  [52.498604656108526, 13.39414842665382],
+    "coordinates": [52.498604656108526, 13.39414842665382],
     "timeArrival": { "$date": "2019-06-02T18:26:35.000Z" },
     "timeDepature": { "$date": "2019-06-02 19:26:35 UTC" }
   },
@@ -292,7 +292,7 @@
       "$oid": "5e77a45ffc13ae6dae000070"
     },
     "infectionStatus": "isInfected",
-    "coordinates": [52.49898770151910,6 13.42713609793238],
+    "coordinates": [52.498987701519106, 13.42713609793238],
     "timeArrival": { "$date": "2020-02-29T01:40:17.000Z" },
     "timeDepature": { "$date": "2020-02-29 02:40:17 UTC" }
   },
@@ -319,7 +319,7 @@
       "$oid": "5e77a45ffc13ae6dae000073"
     },
     "infectionStatus": "isInfected",
-    "coordinates":  [52.476570235064074, 13.439457160065865],
+    "coordinates": [52.476570235064074, 13.439457160065865],
     "timeArrival": { "$date": "2019-07-27T07:11:38.000Z" },
     "timeDepature": { "$date": "2019-07-27 08:11:38 UTC" }
   },
@@ -337,7 +337,7 @@
       "$oid": "5e77a45ffc13ae6dae000075"
     },
     "infectionStatus": "isInfected",
-    "coordinates":  [52.52076714783958, 13.406185234398173],
+    "coordinates": [52.52076714783958, 13.406185234398173],
     "timeArrival": { "$date": "2019-08-06T09:42:22.000Z" },
     "timeDepature": { "$date": "2019-08-06 10:42:22 UTC" }
   },
@@ -360,40 +360,3 @@
     "timeDepature": { "$date": "2019-11-30 00:59:46 UTC" }
   }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
