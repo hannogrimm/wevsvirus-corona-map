@@ -21,6 +21,22 @@
     "header": {
       "headline": "Risikopotential in Deinem Umfeld",
       "text": "Verfolgen Sie Live Corona Risiko-Zonen und überprüfen Sie anonym ob Sie sich in Risikozonen aufgehalten haben."
+    },
+    "step1": {
+      "headline": "Bestimme Deine Situation",
+      "text1": "Wähle je nach Deiner aktuellen Lage den Button aus, der Dir in Deiner Situation am meisten hilft.",
+      "text2": "Solltest Du betroffen sein, bitten wir Dich Deine letzten Aufenthaltsorte anzugeben, sodass andere Menschen geschützt werden können.",
+      "cta_infected": "Ich bin infiziert",
+      "cta_risked": "Ich bin nicht infiziert"
+    },
+    "step2": {
+      "headline": "Gebe Deine letzten Aufenthaltsorte an",
+      "text1": "Trage Deine letzten Aufenthaltsorte inklusive Datum und Dauer selber oder via Google Bewegungshistorie ein (bald verfügbar)."
+    },
+    "step3": {
+      "headline": "Überprüfe die Risikozonen",
+      "text1": "Solltest Du infiziert sein, hilfst Du mit der Einsendung Deiner vergangengen Standorte, andere Menschen ebenfalls vor einer Infizierung zu schützen.",
+      "text2": "Bei der Überprüfung des Risikopotentials erhälst Du eine Auswertung der Orte, an denen Du Dich wie angebenen zuletzt aufgehalten hast."
     }
   },
   "abouttheproject": {
@@ -57,6 +73,28 @@
     "prompt": "Ermittel dein Risikopotential",
     "thanks": "Überprüfe deine letzten Aufenthaltsorte auf Covid-19 Fälle",
     "info": "Versuche Dich an Deine Bewegungshistore im öffentlichen Raum in den letzten 4 Tagen zu erinnern. Gebe die Adressen von Orten wie Einkaufszentren, Schulen, öffentliche Plätzen etc. an, an denen Du Dich aufgehalten hast."
+  },
+  "footer": {
+    "service": {
+      "label": "Service",
+      "infected": "Für Infizierte",
+      "risked": "Für Gefährdete"
+    },
+    "aboutus": {
+      "label": "Über Uns"
+    },
+    "support": {
+      "label": "Support",
+      "contact": "Kontakt",
+      "updates": "Aktuelle Informationen"
+    },
+    "supportedby": {
+      "label": "Unterstützt von"
+    }
+  },
+  "links": {
+    "imprint": "Impressum",
+    "datapolicy": "Datenschutz"
   },
   "date": "Datum",
   "time": "Uhrzeit",
