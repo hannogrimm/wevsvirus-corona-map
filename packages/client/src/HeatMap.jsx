@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 const API_KEY = process.env.REACT_APP_HERE_API_KEY ? process.env.REACT_APP_HERE_API_KEY : 'unknown'
 
-var gpsPoints = []
-
 function reverseGeocode(platform, coord) {
   var geocoder = platform.getGeocodingService(),
     reverseGeocodingParameters = {
@@ -18,9 +16,6 @@ function reverseGeocode(platform, coord) {
 
 function onSuccess(result) {
   var locations = result.response.view[0].result
-  gpsPoints[gpsPoints.length - 1].locationData = locations
-  console.log(locations[0].location.address)
-  console.log(gpsPoints)
 }
 
 function onError(error) {
@@ -57,17 +52,27 @@ const HeatMap = props => {
       assumeValues: false,
     })
 
+    let xhr = new XMLHttpRequest()
+    xhr.responseType = 'json'
+    xhr.open('POST', 'http://localhost:5000/api/gpspoint/getnearby')
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
+    xhr.onreadystatechange = () => {
+      let transformedPoints = []
+      if (!!xhr.response) {
+        console.log(xhr.response)
+        xhr.response.forEach((item, index) => {
+          let coor = item.location.coordinates
+          transformedPoints.push({
+            lat: coor[0],
+            lng: coor[1],
+          })
+        })
+        heatmapProvider.addData(transformedPoints)
+      }
+    }
+    xhr.send(JSON.stringify({ coordinates: [52.519481921511876, 13.416734005820842] }))
+
     map.addLayer(new window.H.map.layer.TileLayer(heatmapProvider))
-
-    // Add event listener:
-    map.addEventListener('tap', function(evt) {
-      var coord = map.screenToGeo(evt.currentPointer.viewportX, evt.currentPointer.viewportY)
-
-      console.log('Clicked at: ', coord['lat'], coord['lng'])
-      gpsPoints.push({ lat: coord['lat'], lng: coord['lng'] })
-      heatmapProvider.addData([coord])
-      reverseGeocode(platform, coord)
-    })
 
     // Instantiate the default behavior, providing the mapEvents object:
     var behavior = new window.H.mapevents.Behavior(mapEvents)
