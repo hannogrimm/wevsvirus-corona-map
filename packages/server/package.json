@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "set PORT=3006 && npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -13,6 +18,7 @@
     "express-validator": "^6.4.0",
     "http-errors": "~1.6.3",
     "mongoose": "^5.9.5",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.2"
   }
 }

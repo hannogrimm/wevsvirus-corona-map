@@ -1,19 +1,19 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import Map from "./Map";
+import React from 'react'
+
+import { Router } from 'react-router-dom'
+import { Routes } from './routes/Router'
+import history from './routes/history'
+
+import './styles/app.css'
 
 const App = () => {
-  const { t } = useTranslation();
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>{t("hello")}</p>
+    <Router history={history}>
+      <div className="App">
+        <Routes />
+      </div>
+    </Router>
+  )
+}
 
-        <Map />
-      </header>
-    </div>
-  );
-};
-
-export default App;
+export default App
