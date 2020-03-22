@@ -8,8 +8,8 @@
     "link": "More Information"
   },
   "home": {
-    "headline": "Covid-19 (Coronavirus)",
-    "prompt": "Geomap (live)",
+    "headline": "Your Move Against Corona.",
+    "prompt": "Corolation",
     "info": "Follow live Covid-19 risk areas and check anonymously if you recently visited a risk area.",
     "info2": "We pledge all citiziens that positively tested for Covid-19 to anonymously enter their recent movement history in public areas to help stopping the spread of the virus.",
     "cta": {
@@ -72,7 +72,7 @@
   "risked": {
     "prompt": "Ascertain your risk potential",
     "thanks": "Check your last whereabouts for Covid-19 cases",
-    "info": "Try to remember your recent movement history through public spaces in the last 4 days. Enter locations of places as shopping malls, schools, parks etc. that you visited recently."
+    "info": "Try to remember your recent movement history through public spaces in the last 8 days. Enter locations of places as shopping malls, schools, parks etc. that you visited recently."
   },
 
   "footer": {
@@ -99,6 +99,33 @@
   },
   "date": "date",
   "time": "time",
-  "addToTimeline": "Add to Timeline"
-
+  "addToTimeline": "Add to Timeline",
+  "form": {
+    "title": "Share Your Recent Locations",
+    "desc": "Select your recent location visits or import them via Google Timeline (coming soon)",
+    "fields": {
+      "location": {
+        "label": "Location",
+        "placeholder": "City, Adress, Building, Region etc."
+      },
+      "date": {
+        "label": "Date",
+        "placeholder": "Date of Visit",
+        "format": "DD.MM.YYYY"
+      },
+      "time": {
+        "from": {
+          "label": "From",
+          "placeholder": "Time",
+          "format": "HH:mm"
+        },
+        "to": {
+          "label": "To",
+          "placeholder": "Time",
+          "format": "HH:mm"
+        }
+      }
+    },
+    "button": "Share This Location"
+  }
 }

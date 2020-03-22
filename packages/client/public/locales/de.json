@@ -8,12 +8,12 @@
     "link": "Mehr Informationen"
   },
   "home": {
-    "headline": "Covid-19 (Coronavirus)",
-    "prompt": "Geomap (live)",
-    "info": "Verfolgen Sie Live Corona Risiko-Zonen und überprüfen sie anonym ob sie sich in Risikozonen aufgehalten haben.",
-    "info2": "Wir bitten alle mit Covid-19 infizierten Bürgerinnen und Bürger der Bundesregierung Deutschland, Ihre Bewegungs-Historie im öffentlichen Raum anonym anzugeben, um die Ausbreitung des Viruses zu stoppen.",
+    "headline": "Dein Move gegen Corona.",
+    "prompt": "Corolation",
+    "info": "Hilf als COVID-19 Infizierter mit die Ausbreitung zu stoppen und lade anonym deine Bewegungsdaten der letzten Wochen hoch.",
+    "info2": "So können potentielle Risiko-Zonen erkannt werden und andere leichter überprüfen ob sie sich bei dir angesteckt haben.",
     "cta": {
-      "infected": "Bei Infizierung helfen, die Ausbreitung zu stoppen",
+      "infected": "Als Infizierte/r helfen, die Ausbreitung zu stoppen",
       "risked": "Eigenes Risikopotential überprüfen"
     }
   },
@@ -72,7 +72,7 @@
   "risked": {
     "prompt": "Ermittel dein Risikopotential",
     "thanks": "Überprüfe deine letzten Aufenthaltsorte auf Covid-19 Fälle",
-    "info": "Versuche Dich an Deine Bewegungshistore im öffentlichen Raum in den letzten 4 Tagen zu erinnern. Gebe die Adressen von Orten wie Einkaufszentren, Schulen, öffentliche Plätzen etc. an, an denen Du Dich aufgehalten hast."
+    "info": "Versuche Dich an Deine Bewegungshistore im öffentlichen Raum in den letzten 8 Tagen zu erinnern. Gebe die Adressen von Orten wie Einkaufszentren, Schulen, öffentliche Plätzen etc. an, an denen Du Dich aufgehalten hast."
   },
   "footer": {
     "service": {
@@ -98,6 +98,33 @@
   },
   "date": "Datum",
   "time": "Uhrzeit",
-  "addToTimeline": "Standort Hinzufügen"
-
+  "addToTimeline": "Standort Hinzufügen",
+  "form": {
+    "title": "Sende Deine letzten Standorte",
+    "desc": "Wähle Deine letzten Standorte aus oder importiere Deine Bewegungshistorie von Google (bald verfügbar)",
+    "fields": {
+      "location": {
+        "label": "Standort",
+        "placeholder": "Stadt, Adresse, Gebäude, Örtlichkeit etc."
+      },
+      "date": {
+        "label": "Datum",
+        "placeholder": "Tag des Besuches",
+        "format": "DD.MM.YYYY"
+      },
+      "time": {
+        "from": {
+          "label": "Von",
+          "placeholder": "Uhrzeit",
+          "format": "HH:mm"
+        },
+        "to": {
+          "label": "Bis",
+          "placeholder": "Uhrzeit",
+          "format": "HH:mm"
+        }
+      }
+    },
+    "button": "Übermittele diesen Standort"
+  }
 }
