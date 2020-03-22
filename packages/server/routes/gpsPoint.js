@@ -4,13 +4,8 @@ require('express-validator')
 
 const GpsPointsModel = require('../models/gpspoint')
 
-router.get('/test', async (req, res) => {
-  const resultLocations = await GpsPointsModel.find({})
-  res.json(resultLocations)
-})
 
-
-router.get('/complex', async (req, res) => {
+router.get('/', async (req, res) => {
   console.log('getting gpsPoint')
 
   try {
